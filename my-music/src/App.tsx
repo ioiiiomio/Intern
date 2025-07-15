@@ -2,6 +2,7 @@ import React from 'react';
 import { MusicCarousel } from './components/MusicCarousel';
 import { MusicPlayer } from './components/MusicPlayer';
 import { Track } from './store/playerAtom';
+import {Provider} from 'jotai';
 
 const tracks: Track[] = [
   {
@@ -23,11 +24,13 @@ const tracks: Track[] = [
 
 const App: React.FC = () => {
   return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">My Music Player</h1>
-      <MusicCarousel tracks={tracks} />
-      <MusicPlayer />
-    </div>
+    <Provider> {}
+      <div className="p-6 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">My Music Player</h1>
+        <MusicCarousel tracks={tracks} />
+        <MusicPlayer />
+      </div>
+    </Provider>
   );
 };
 

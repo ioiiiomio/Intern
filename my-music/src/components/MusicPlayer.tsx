@@ -7,7 +7,7 @@ export function MusicPlayer() {
   const [queue, setQueue] = useAtom(queueAtom);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Play audio when currentTrack changes
+  
   useEffect(() => {
     if (audioRef.current && currentTrack) {
       audioRef.current.src = currentTrack.src;
