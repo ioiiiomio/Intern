@@ -1,13 +1,12 @@
-import React from 'react';
+import Header from 'remoteApp/Header';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-center flex flex-col items-center justify-center">
-      <header className="flex flex-col items-center gap-6">
-        <h1 className = "text-blue-800 underline">This is a Host App</h1>
-      </header>
+    <div>
+      <Header />
+      <p>This is the body from the host app.</p>
     </div>
   );
-};
+}
 
 export default App;
