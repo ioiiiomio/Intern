@@ -1,9 +1,11 @@
-import Header from 'remoteApp/Header';
+import React from "react";
+import HeaderComponent from "./pages/Header";
+
 
 function App() {
   return (
     <div>
-      <Header />
+      <HeaderComponent />
       <p>This is the body from the host app.</p>
     </div>
   );

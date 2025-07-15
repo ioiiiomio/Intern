@@ -10,7 +10,7 @@ module.exports = {
     open: true,
   },
   output: {
-    publicPath: 'auto',
+    publicPath: 'http',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -29,7 +29,7 @@ module.exports = {
       name: 'remoteApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './Header': './src/component/Header',
+        './Header': './src/component/Header.tsx',
       },
       shared: {
         react: { singleton: true, requiredVersion: '^19.1.0' },
