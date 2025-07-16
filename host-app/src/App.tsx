@@ -1,14 +1,11 @@
-import React from "react";
-import HeaderComponent from "./pages/Header";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
 
+const root = document.getElementById('root')
+if (!root) throw new Error('root not found')
 
-function App() {
-  return (
-    <div>
-      <HeaderComponent />
-      <p>This is the body from the host app.</p>
-    </div>
-  );
-}
-
-export default App;
+  console.log('root')
+ReactDOM.createRoot(root).render(
+  <div>Host app</div>
+)

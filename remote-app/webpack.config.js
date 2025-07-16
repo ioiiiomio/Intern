@@ -3,7 +3,7 @@ const path = require('path');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   mode: 'development',
   devServer: {
     port: 3001,
