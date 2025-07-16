@@ -50,11 +50,10 @@ module.exports = (_, argv) => ({
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'hostApp',
-      filename: 'remoteApp.js',
+      name: 'remoteApp',
+      filename: 'hostApp.js',
       remotes: {
-        
-        remoteApp: 'remoteApp@http://localhost:3000/remoteApp.js',
+        remoteApp: 'remoteApp@http://localhost:3001/remoteApp.js',
       },
       shared: {
         react: { singleton: true, requiredVersion: '^19.1.0' },
