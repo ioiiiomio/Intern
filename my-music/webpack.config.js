@@ -3,31 +3,31 @@ const path = require('path');
 const { ModuleFederationPlugin } = require('webpack').container;
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-module.exports = (_, argv) => ({
-  entry: './src/index.ts',
+// for testng
+const isStandalone = process.env.STANDALONE === "true";
+
+
+module.exports = {
+  entry: './src/index.tsx',
   mode: 'development',
   
   output: {
-    path: path.resolve(__dirname, 'build'),
-    // Necc full path for host
-    publicPath: 'http://localhost:3000/',
-  },
+      path: path.resolve(__dirname, 'build'),
+      publicPath: 'http://localhost:3002/',
+    },
   resolve: {
-    alias: { "@": path.resolve(__dirname, "./src") },
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
-    plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
+      alias: { "@": path.resolve(__dirname, "./src") },
+      extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+      plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
   },
-  
   devServer: {
     headers: { "Access-Control-Allow-Origin": "*" },
-    // necc
-    port: 3000,
+    port: 3002,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
-    static: { directory: path.resolve(__dirname, "build") },
+    static: { directory: path.resolve(__dirname, "public") },
   },
-// ??
-  performance: { hints: false },
+
 
   module: {
     rules: [
@@ -49,19 +49,22 @@ module.exports = (_, argv) => ({
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+
+    !isStandalone &&
     new ModuleFederationPlugin({
-      name: 'hostApp',
-      remotes: {
-        remoteApp: 'remoteApp@http://localhost:3001/remoteApp.js',
-        musicApp: 'musicApp@http://localhost:3002/musicApp.js',
-      },
+      name: 'musicApp',
+      filename: 'musicApp.js',
+      exposes: {
+        './MusicPage': './src/components/MusicPage.tsx',
+},
+
       shared: {
         react: { singleton: true, requiredVersion: '^19.1.0' },
         'react-dom': { singleton: true, requiredVersion: '^19.1.0' },
       },
     }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-});
+  ].filter(Boolean),
+};

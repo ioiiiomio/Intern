@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { Header } from 'remoteApp/Header';
 
-const root = document.getElementById('root')
-if (!root) throw new Error('root not found')
+// Lazy load MusicPage from musicApp remote
+const MusicPage = React.lazy(() => import('musicApp/MusicPage'));
 
-  console.log('root')
+const root = document.getElementById('root');
+if (!root) throw new Error('root not found');
+
 ReactDOM.createRoot(root).render(
-  <Header>
-  </Header>
-
-)
+  <>
+    <Header />
+    <React.Suspense fallback={<div>Loading Music Page...</div>}>
+      <MusicPage />
+    </React.Suspense>
+  </>
+);
