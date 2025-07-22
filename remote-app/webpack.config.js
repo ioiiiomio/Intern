@@ -22,7 +22,7 @@ module.exports = {
     port: 3001,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
-    static: { directory: path.resolve(__dirname, "build") },
+    static: { directory: path.resolve(__dirname, "public") },
   },
 
 

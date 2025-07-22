@@ -24,7 +24,7 @@ module.exports = (_, argv) => ({
     port: 3000,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
-    static: { directory: path.resolve(__dirname, "build") },
+    static: { directory: path.resolve(__dirname, "public") },
   },
 // ??
   performance: { hints: false },
