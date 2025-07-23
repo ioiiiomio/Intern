@@ -1,5 +1,5 @@
 // //App.tsx
-// import React from 'react';
+import React from 'react';
 // import MyProgress from './components/MyProgress';
 
 
@@ -22,4 +22,4 @@
 //   );
 // };
 
-// export default App;
+export {};

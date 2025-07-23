@@ -1,30 +1,10 @@
-// Общее исполнение за Месяц
+// // Общее исполнение за Месяц
 
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card"
+import ChartRadialStacked from "./ui/RadialChart";
 
 function MonthProgress(){
     return(
-        <Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-    <CardAction>Card Action</CardAction>
-  </CardHeader>
-  <CardContent>
-    <p>Card Content</p>
-  </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
-</Card>
+        <ChartRadialStacked />
     )
 }
 

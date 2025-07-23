@@ -18,7 +18,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "./chart"
+} from "./Chart"
 
 export const description = "A radial chart with stacked sections"
 
@@ -35,7 +35,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartRadialStacked() {
+export default function ChartRadialStacked() {
   const totalVisitors = chartData[0].desktop + chartData[0].mobile
 
   return (
