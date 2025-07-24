@@ -1,13 +1,19 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { Header } from 'remoteApp/Header';
 
-const App: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-100 text-center flex flex-col items-center justify-center">
-      <header className="flex flex-col items-center gap-6">
-        <h1 className = "text-blue-800 underline">This is a Host App</h1>
-      </header>
-    </div>
-  );
-};
+// Lazy load MusicPage from musicApp remote
+const MusicPage = React.lazy(() => import('musicApp/MusicPage'));
 
-export default App;
+const root = document.getElementById('root');
+if (!root) throw new Error('root not found');
+
+ReactDOM.createRoot(root).render(
+  <>
+    <Header />
+    <React.Suspense fallback={<div>Loading Music Page...</div>}>
+      <MusicPage />
+    </React.Suspense>
+  </>
+);

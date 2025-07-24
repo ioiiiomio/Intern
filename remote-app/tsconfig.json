@@ -1,3 +1,4 @@
+// remote app
 {
   "compilerOptions": {
     "target": "ES6",
@@ -15,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "types", "../bank-app/src/lib"]
+  "include": ["src"]
 }

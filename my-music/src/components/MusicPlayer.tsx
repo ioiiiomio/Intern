@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useAtom } from 'jotai';
 import { currentTrackAtom, queueAtom, Track } from '../store/playerAtom';
+import "../index.css";
 
 export function MusicPlayer() {
   const [currentTrack, setCurrentTrack] = useAtom(currentTrackAtom);
@@ -26,7 +27,7 @@ export function MusicPlayer() {
   };
 
   return (
-    <div className="music-player p-4 border rounded shadow-md">
+    <div className="music-player p-4 border rounded shadow-md center">
       <audio ref={audioRef} onEnded={onEnded} controls />
       {currentTrack ? (
         <div className="mt-2">
