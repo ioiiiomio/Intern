@@ -25,11 +25,11 @@ function HomePage() {
         {/* Top Section: Progress Components */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-30%">
           <div className="bg-white rounded-xl shadow p-4">
-            <h2 className="text-sm font-semibold mb-2 italic">This is from MyProgress</h2>
+            <h5 className="text-sm font-semibold mb-2 italic">This is from MyProgress</h5>
             <MyProgress />
           </div>
           <div className="bg-white rounded-xl shadow p-4">
-            <h2 className="text-sm font-semibold mb-2 italic">This thingy is from MonthProgress</h2>
+            <h5 className="text-sm font-semibold mb-2 italic">This thingy is from MonthProgress</h5>
             <MonthProgress />
           </div>
         </div>
