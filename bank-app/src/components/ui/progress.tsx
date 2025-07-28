@@ -2,31 +2,43 @@
 
 import * as React from "react"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
-
 import { cn } from "../../lib/utils"
 
-function Progress({
-  className,
-  value,
-  ...props
-}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+type ProgressProps = React.ComponentProps<typeof ProgressPrimitive.Root> & {
+  value: number
+  gradient?: string 
+  // Class from Tailwnd
+}
+
+function Progress({ className, value, gradient, ...props }: ProgressProps) {
+  const fallbackGradient = getDefaultGradient(value)
+
   return (
     <ProgressPrimitive.Root
       data-slot="progress"
       className={cn(
-        "bg-primary/20 relative h-4 w-full overflow-hidden rounded-full border border-gray-200",
+        "bg-background_prime relative h-4 w-full overflow-hidden rounded-full border border-border_color",
         className
       )}
       {...props}
     >
       <ProgressPrimitive.Indicator
         data-slot="progress-indicator"
-        className="bg-primary h-full w-full flex-1 transition-all bg-blue-500 border-w-1"
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+        className={cn(
+          "h-full w-full transition-all duration-700 ease-out bg-gradient-to-r rounded-lg",
+          gradient ?? fallbackGradient
+        )}
+        style={{ transform: `translateX(-${100 - value}%)` }}
       />
     </ProgressPrimitive.Root>
-
   )
+}
+
+// Automatically choose gradient based on progress
+function getDefaultGradient(value: number): string {
+  if (value < 30) return "from-white via-red-50 to-red-500"
+  if (value < 70) return "from-orange-200 to-orange-400"
+  return "from-green-50 via-lime-400 to-lime-600"
 }
 
 export { Progress, ProgressPrimitive }

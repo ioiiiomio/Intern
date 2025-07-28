@@ -8,7 +8,7 @@ import SideBar from "../components/SideBar"
 import ProfHeader from "../components/ProfHeader"
 
 import { DataTable } from "../components/ui/table/data-table"
-import { columns} from "../components/ui/table/columns"
+import { columns } from "../components/ui/table/columns"
 import { getEmployeeData } from "../data/EmployeeData"
 import { EmployeePerformance } from "../data/EmployeeTypes"
 
@@ -24,41 +24,41 @@ function HomePage() {
   }, [])
 
   return (
-    <div className="w-screen min-h-screen bg-background_prime grid grid-cols-1 md:grid-cols-3 space-x-2 ">
-      {/* sidethingy */}
-      <div className="h-[1042px] w-[300px] z-40 bg-white rounded-2xl  border p-4 m-4">
+    <div className="w-screen min-h-screen bg-background_prime p-4 grid grid-cols-[300px_1fr_120px] gap-3">
+      {/* Sidebar */}
+      <div className="bg-background_secondary rounded-2xl border border-border_color p-4 max-h-[1042px]">
         <SideBar />
-        <h2 className="text-sm font-semibold italic">This thingy is from Sidebar</h2>
+        <h2 className="text-sm font-semibold italic mt-4">This thingy is from Sidebar</h2>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-4 space-y-2 grid grid-cols-4 md:grid-cols-1 gap-4 h-30%">
-        {/* here i divide the halp of page into 4 sections */}
-
+      <div className="flex flex-col space-y-4 min-h-0">
         {/* Header */}
-        <div className="bg-white p-2 border rounded-2xl">
+        <div className="bg-background_secondary p-4 border  border-border_color rounded-2xl">
           <ProfHeader />
         </div>
 
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-30%">
-          <div className="bg-white rounded-xl shadow p-4 fit">
+        {/* Progress Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-background_secondary rounded-2xl border  border-border_color p-6">
             <MyProgress />
           </div>
-          <div className="bg-white rounded-xl shadow p-4">
-            <h5 className="text-sm font-semibold mb-2 italic">This thingy is from MonthProgress</h5>
+          <div className="bg-background_secondary rounded-2xl border  border-border_color p-6">
             <MonthProgress />
           </div>
         </div>
 
         {/* Table Section */}
-        <div className="bg-white rounded-xl shadow p-4 h-70%">
+        <div className="bg-white rounded-xl border p-4">
           <h2 className="text-lg font-semibold mb-4">Таблица Сотрудников</h2>
           <DataTable columns={columns} data={data} />
         </div>
       </div>
+
+      {/* Right Padding Box */}
+      <div className="bg-transparent" />
     </div>
   )
 }
 
-export default HomePage;
+export default HomePage

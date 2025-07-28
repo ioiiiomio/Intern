@@ -16,8 +16,6 @@ module.exports = {
         bank_red: '#CD373766',
         border_color: '#E2E2E2',
 
-
-
       },
     },
   },
