@@ -38,7 +38,7 @@ function Progress({ className, value, gradient, ...props }: ProgressProps) {
 function getDefaultGradient(value: number): string {
   if (value < 30) return "from-white via-red-50 to-red-500"
   if (value < 70) return "from-orange-200 to-orange-400"
-  return "from-green-50 via-lime-400 to-lime-600"
+  return "from-green-50 via-lime-200 via-lime-400 to-lime-600"
 }
 
 export { Progress, ProgressPrimitive }

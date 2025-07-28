@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 
 import { cn } from "../../lib/utils"
+import { Meh } from "lucide-react"
 
 
 const badgeVariants = cva(
@@ -22,6 +23,11 @@ const badgeVariants = cva(
     },
   }
 )
+function getBadgeVariant(value: number): VariantProps<typeof badgeVariants>["variant"] {
+  if (value < 30) return "meh"
+  if (value < 70) return "average"
+  return "good"
+}
 
 
 function Badge({
@@ -42,4 +48,4 @@ function Badge({
   )
 }
 
-export { Badge, badgeVariants }
+export { Badge, badgeVariants, getBadgeVariant }

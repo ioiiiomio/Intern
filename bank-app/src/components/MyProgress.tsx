@@ -1,9 +1,10 @@
 import React from "react";
 import { Progress } from "../components/ui/progress";
-import { Badge } from "./ui/badge";
+import { Badge, getBadgeVariant } from "./ui/badge";
+import { Percent } from "lucide-react";
 
 const testData = [
-  { id: 1, required: 15000, actual: 18000 },
+  { id: 1, required: 13000, actual: 10000 },
   { id: 2, required: 15000, actual: 10000 },
   { id: 3, required: 40000, actual: 3200 },
 ];
@@ -15,8 +16,9 @@ function MyProgress() {
   const data2 = testData.find((item) => item.id === 2)!;
   const data3 = testData.find((item) => item.id === 3)!;
 
+
   const calculatePercent = (actual: number, required: number) =>
-    required > 0 ? Math.min((actual / required) * 100, 100) : 0;
+    required > 0 ? (Math.floor((actual / required) * 100)) :0;
 
   return (
     <div className="">
@@ -29,8 +31,8 @@ function MyProgress() {
         </div>
         <Progress value={calculatePercent(data1.actual, data1.required)} />
         <div className="flex justify-start">
-          <Badge variant="good">
-            {data1.actual} / {data1.required}
+          <Badge variant={getBadgeVariant(calculatePercent(data1.actual, data1.required))}>
+            {calculatePercent(data1.actual, data1.required)}% ({data1.actual})
           </Badge>
         </div>
       </div>
@@ -42,9 +44,12 @@ function MyProgress() {
         </div>
         <Progress value={calculatePercent(data2.actual, data2.required)} />
         <div className="flex justify-start">
-          <Badge variant="average">
-            {data2.actual} / {data2.required}
+          <Badge variant={getBadgeVariant(calculatePercent(data2.actual, data2.required))}>
+                {calculatePercent(data2.actual, data2.required)}% ({data2.actual})
           </Badge>
+          
+
+         
         </div>
       </div>
 
@@ -55,8 +60,8 @@ function MyProgress() {
         </div>
         <Progress value={calculatePercent(data3.actual, data3.required)} />
         <div className="flex justify-start">
-          <Badge variant="meh">
-            {data3.actual} / {data3.required}
+          <Badge variant={getBadgeVariant(calculatePercent(data3.actual, data3.required))}>
+            {calculatePercent(data3.actual, data3.required)}% ({data3.actual})
           </Badge>
         </div>
       </div>

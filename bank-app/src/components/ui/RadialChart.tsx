@@ -22,11 +22,11 @@ import { ChartConfig, ChartContainer } from './Chart'
 export const description = "A radial chart with text"
 
 const chartData = [
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+  { browser: "safari", credits: 200, fill: "var(--color-safari)" },
 ]
 
 const chartConfig = {
-  visitors: {
+  credits: {
     label: "Кредиты",
   },
   // safari: {
@@ -61,7 +61,7 @@ export function ChartRadialText() {
               className="first:fill-muted last:fill-background"
               polarRadius={[86, 74]}
             />
-            <RadialBar dataKey="visitors" background cornerRadius={10} />
+            <RadialBar dataKey="Кредиты" background cornerRadius={10} />
             <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
               <Label
                 content={({ viewBox }) => {
@@ -78,14 +78,14 @@ export function ChartRadialText() {
                           y={viewBox.cy}
                           className="fill-foreground text-4xl font-bold"
                         >
-                          {chartData[0].visitors.toLocaleString()}
+                          {chartData[0].credits.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
                           className="fill-muted-foreground"
                         >
-                          Visitors
+                          Кредиты
                         </tspan>
                       </text>
                     )
