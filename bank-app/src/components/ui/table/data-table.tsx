@@ -5,6 +5,7 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
+  getFilteredRowModel
 } from "@tanstack/react-table"
 
 import {
@@ -15,6 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "./table"
+
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -29,16 +31,31 @@ export function DataTable<TData, TValue>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
   })
 
   return (
     <div className="overflow-hidden rounded-md border">
+      <select
+        className="m-4 p-2 border rounded justify-end"
+        onChange={(e) =>
+        table.getColumn("period")?.setFilterValue(e.target.value || undefined)
+        }
+      >
+      <option value="">All Periods</option>
+      <option value="Week">Week</option>
+      <option value="Month">Month</option>
+      <option value="Year">Year</option>
+      </select>
+      {/* Filter thingy -> change to shadcn ltr */}
+
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
+                  
                   <TableHead key={header.id}>
                     {header.isPlaceholder
                       ? null

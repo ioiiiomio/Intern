@@ -1,26 +1,21 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
+import { EmployeePerformance } from "../../../data/EmployeeTypes"
+
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type EmployeePerformance = {
-  employee: string
-  rating: number | string
-  dynamics: string
-  credits1: number
-  credits2: number
-  deposits: number
-  cards: number
-  ibfl: number
-}
 
 
 export const columns: ColumnDef<EmployeePerformance>[] = [
+
   {
     accessorKey: "employee",
     header: "Сотрудник",
+
   },
+
   {
     accessorKey: "rating",
     header: "Рейтинг",
@@ -49,4 +44,9 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
     accessorKey: "ibfl",
     header: "ИБФЛ",
   },
+
+  {
+  accessorKey: "period",
+  header: "Период",
+}
 ]
