@@ -40,10 +40,10 @@ function HomePage() {
 
         {/* Progress Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-background_secondary rounded-2xl border  border-border_color p-6">
+          <div className="bg-background_secondary rounded-2xl border  border-border_color p-[32px]">
             <MyProgress />
           </div>
-          <div className="bg-background_secondary rounded-2xl border  border-border_color p-6">
+          <div className="bg-background_secondary rounded-2xl border  border-border_color p-[32px]">
             <MonthProgress />
           </div>
         </div>

@@ -1,14 +1,14 @@
-import { faker } from "@faker-js/faker"
+import { faker, Faker } from "@faker-js/faker"
 import { EmployeePerformance } from "./EmployeeTypes"
-import { getRandomValues } from "crypto"
 
 export async function getEmployeeData(): Promise<EmployeePerformance[]> {
     // Kostyl but who caresss
     const periods = ["Week", "Month", "Year"];
+    const fakePic = faker.image.avatarGitHub();
 
   return Array.from({ length: 20 }, () => ({
     
-    pic: faker.image.avatar(),
+    pic: fakePic,
     employee: faker.person.fullName(),
     rating: parseFloat((Math.random() * 5).toFixed(1)),
     dynamics: `${faker.number.int({min: 0, max: 99})}%`,

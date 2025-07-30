@@ -1,34 +1,33 @@
-// // Общее исполнение за Месяц
+import { ChartRadialText } from "./ui/RadialChart";
 
-import { RadialBarChart } from "recharts";
-import { CardContent } from "./ui/card";
-import { ChartRadialText} from './ui/RadialChart';
+const bonusVal = 120000;
 
+function MonthProgress() {
+  return (
+    
+    <div className="w-full p-2 items-center">
+        <h1 className="font-semibold text-xl mb-4">Общее исполнение за месяц</h1>
+     
 
-function MonthProgress(){
-    return(
-        <div>
-            <h1 className="font-semibold text-xl"> Общее исполнение за месяц</h1>
-            <div className="grid grid-cols-3 gap-1 justify-between">
-                <div className="m-2">
-                    <ChartRadialText />
-                    
-                </div>
-                <div className="m-2">
-                    <ChartRadialText />
-                   
+      <div className="flex items-center gap-[24px]">
+        {/* Left Radial Chart */}
+        <div className="flex flex-col items-center">
+          <ChartRadialText />
+        </div>
 
-                </div>
-                <div className="m-2">
-                     <h1>Bonuses</h1>
+        {/* Center Radial Chart */}
+        <div className="flex flex-col items-center">
+          <ChartRadialText />
+        </div>
 
-                </div>
-                               
-            </div>
-
-            </div>
-       
-    )
+        {/* Bonus Value */}
+        <div className="flex flex-col items-center text-center">
+          <h1 className="text-4xl font-semibold text-green-600">💰 {bonusVal} тг</h1>
+          <p className="text-sm text-gray-600">Размер Бонуса</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default MonthProgress;

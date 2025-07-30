@@ -13,7 +13,7 @@ module.exports = {
         text_color_secondary: '#8C9197',
         bank_green: '#4CA436',
         bank_orange: '#EA9632',
-        bank_red: '#CD373766',
+        bank_red: '#CD3737',
         border_color: '#E2E2E2',
 
       },
