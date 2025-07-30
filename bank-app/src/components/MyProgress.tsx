@@ -29,7 +29,7 @@ function MyProgress() {
           <p className="text-sm font-medium text-gray-700">Залоговые кредиты</p>
           <p className="text-xs text-right text-gray-500">{data1.required}</p>
         </div>
-        <Progress value={calculatePercent(data1.actual, data1.required)} />
+        <Progress value={calculatePercent(data1.actual, data1.required)} length={516} />
         <div className="flex justify-start">
           <Badge variant={getBadgeVariant(calculatePercent(data1.actual, data1.required))}>
             {calculatePercent(data1.actual, data1.required)}% ({data1.actual})
@@ -42,7 +42,7 @@ function MyProgress() {
           <p className="text-sm font-medium text-gray-700">Без залоговые кредиты</p>
           <p className="text-xs text-right text-gray-500">{data2.required}</p>
         </div>
-        <Progress value={calculatePercent(data2.actual, data2.required)} />
+        <Progress value={calculatePercent(data2.actual, data2.required)} length={516}/>
         <div className="flex justify-start">
           <Badge variant={getBadgeVariant(calculatePercent(data2.actual, data2.required))}>
                 {calculatePercent(data2.actual, data2.required)}% ({data2.actual})
@@ -58,7 +58,7 @@ function MyProgress() {
           <p className="text-sm font-medium text-gray-700">Депозиты</p>
           <p className="text-xs text-right text-gray-500">{data3.required}</p>
         </div>
-        <Progress value={calculatePercent(data3.actual, data3.required)} />
+        <Progress value={calculatePercent(data3.actual, data3.required)} length={516}/>
         <div className="flex justify-start">
           <Badge variant={getBadgeVariant(calculatePercent(data3.actual, data3.required))}>
             {calculatePercent(data3.actual, data3.required)}% ({data3.actual})

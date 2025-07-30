@@ -52,7 +52,7 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
       const value = row.getValue("rating") as number
       return (
         <div className="flex items-center gap-1">
-          <Progress value={calculatePercent(value, TARGET.rating)} />
+          <Progress value={calculatePercent(value, TARGET.rating)} length={80} />
          <span>{TARGET.rating > 0 ? (Math.floor((value / TARGET.rating) * 100)) :0}% </span>
         </div>
     );
@@ -81,7 +81,7 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
       const percnt = calculatePercent(value, TARGET.credits1);
       return (
         <div className="flex items-center gap-1"> 
-          <Progress value={calculatePercent(value, TARGET.credits1)} />
+          <Progress value={calculatePercent(value, TARGET.credits1)} length={80} />
           <span>{TARGET.credits1 > 0 ? (Math.floor((value / TARGET.credits1) * 100)) :0}%</span>
         </div>
       )
@@ -94,7 +94,7 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
       const value = row.getValue("credits2") as number
       return (
       <div className="flex items-center gap-1"> 
-          <Progress value={calculatePercent(value, TARGET.credits2)} />
+          <Progress value={calculatePercent(value, TARGET.credits2)} length={80}/>
           <span>{TARGET.credits2 > 0 ? (Math.floor((value / TARGET.credits2) * 100)) :0}%</span>
         </div>
       )
@@ -107,7 +107,7 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
       const value = row.getValue("deposits") as number
       return (
         <div className="flex items-center gap-1"> 
-          <Progress value={calculatePercent(value, TARGET.deposits)} />
+          <Progress value={calculatePercent(value, TARGET.deposits)} length={80}/>
           <span>{TARGET.deposits > 0 ? (Math.floor((value / TARGET.deposits) * 100)) :0}%</span>
         </div>
       )
@@ -120,7 +120,7 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
       const value = row.getValue("cards") as number
       return (
         <div className="flex items-center gap-1"> 
-          <Progress value={calculatePercent(value, TARGET.cards)} />
+          <Progress value={calculatePercent(value, TARGET.cards)} length={80}/>
           <span>{value}</span>
         </div>
       )
@@ -133,7 +133,7 @@ export const columns: ColumnDef<EmployeePerformance>[] = [
       const value = row.getValue("ibfl") as number
       return (
         <div className="flex items-center gap-1"> 
-          <Progress value={calculatePercent(value, TARGET.ibfl)} />
+          <Progress value={calculatePercent(value, TARGET.ibfl)} length={80}/>
           <span>{TARGET.ibfl > 0 ? (Math.floor((value / TARGET.ibfl) * 100)) :0}%</span>
         </div>
       )

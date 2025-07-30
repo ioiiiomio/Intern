@@ -39,18 +39,17 @@ function HomePage() {
         </div>
 
         {/* Progress Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-background_secondary rounded-2xl border  border-border_color p-[32px]">
+        <div className="grid grid-cols-1 md:grid-cols-10 gap-4">
+          <div className="bg-background_secondary rounded-2xl border  border-border_color p-[32px] col-span-4">
             <MyProgress />
           </div>
-          <div className="bg-background_secondary rounded-2xl border  border-border_color p-[32px]">
+          <div className="bg-background_secondary rounded-2xl border  border-border_color p-[32px] col-span-6">
             <MonthProgress />
           </div>
         </div>
 
         {/* Table Section */}
-        <div className="bg-white rounded-xl border p-4">
-          <h2 className="text-lg font-semibold mb-4">Таблица Сотрудников</h2>
+        <div className="bg-white rounded-xl border p-[32px]">
           <DataTable columns={columns} data={data} />
         </div>
       </div>

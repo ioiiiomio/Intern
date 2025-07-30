@@ -35,19 +35,23 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="overflow-hidden rounded-md border">
-      <select
-        className="m-4 p-2 border rounded justify-end"
-        onChange={(e) =>
-        table.getColumn("period")?.setFilterValue(e.target.value || undefined)
-        }
-      >
-      <option value="">All Periods</option>
-      <option value="Week">Week</option>
-      <option value="Month">Month</option>
-      <option value="Year">Year</option>
-      </select>
+    <div className="overflow-hidden justify-center">
+      <div className="justify-between grid grid-cols-2 grid-rows-1"> 
+        <h1 className="font-semibold text-xl mb-4">Таблица Сотрудников</h1>
+        <select
+          className="w-200 m-4 p-2 border rounded-lg  text-gray-400"
+          onChange={(e) =>
+          table.getColumn("period")?.setFilterValue(e.target.value || undefined)
+          }
+        >
+        <option value="">За все время</option>
+        <option value="Week">За неделю</option>
+        <option value="Month">За месяц</option>
+        <option value="Year">За год</option>
+        </select>
       {/* Filter thingy -> change to shadcn ltr */}
+      </div>
+      
 
       <Table>
         <TableHeader>

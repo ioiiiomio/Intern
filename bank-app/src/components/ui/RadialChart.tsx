@@ -1,6 +1,6 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
+import { LeafyGreen, TrendingUp } from "lucide-react"
 import {
   Label,
   PolarGrid,
@@ -22,12 +22,15 @@ import { ChartConfig, ChartContainer } from './Chart'
 export const description = "A radial chart with text"
 
 const chartData = [
-  { browser: "safari", credits: 200, fill: "var(--color-safari)" },
+  { name: "Кредиты",
+    credits: 75,
+    fill: "#32CD32",
+  },
 ]
 
 const chartConfig = {
   credits: {
-    label: "Кредиты",
+    label: "credits",
   },
   // safari: {
   //   label: "Safari",
@@ -45,14 +48,14 @@ export function ChartRadialText() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[216px] min-h-[216px]"
+          className="mx-auto aspect-square h-[216px] w-[216px]"
         >
           <RadialBarChart
             data={chartData}
-            startAngle={-90}
-            endAngle={275}
-            innerRadius={80}
-            outerRadius={110}
+            startAngle={-44.74}
+            endAngle={-44.74 + 270}
+            innerRadius={88}
+            outerRadius={160}
           >
             <PolarGrid
               gridType="circle"
@@ -61,6 +64,7 @@ export function ChartRadialText() {
               className="first:fill-muted last:fill-background"
               polarRadius={[86, 74]}
             />
+            
             <RadialBar dataKey="Кредиты" background cornerRadius={10} />
             <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
               <Label
@@ -76,7 +80,7 @@ export function ChartRadialText() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-4xl font-bold"
+                          className="fill-foreground text-4xl text-text_color_secondary font-bold"
                         >
                           {chartData[0].credits.toLocaleString()}
                         </tspan>
