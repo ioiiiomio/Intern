@@ -26,7 +26,7 @@ function HomePage() {
   return (
     <div className="w-screen min-h-screen bg-background_prime p-4 grid grid-cols-[300px_1fr_120px] gap-3">
       {/* Sidebar */}
-      <div className="bg-background_secondary rounded-2xl border border-border_color p-4 max-h-[1042px]">
+      <div className="bg-background_secondary rounded-2xl border border-border_color max-h-[1042px]">
         <SideBar />
         <h2 className="text-sm font-semibold italic mt-4">This thingy is from Sidebar</h2>
       </div>

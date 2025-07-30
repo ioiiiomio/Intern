@@ -8,7 +8,7 @@ function MonthProgress() {
     <div className="w-full">
       <h1 className="font-semibold text-xl mb-4">Общее исполнение за месяц</h1>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center m-4">
         {/* Left Radial Chart */}
         <div className="flex flex-col items-center">
           <ChartRadialText />
@@ -20,9 +20,14 @@ function MonthProgress() {
         </div>
 
         {/* Bonus Value */}
-        <div className="flex flex-col items-center text-center m-4">
-          <h1 className="text-5xl font-semibold text-green-600 pb-4 m-l-[24px]">💰 {bonusVal} тг</h1>
-          <p className="text-sm text-gray-600">Размер Бонуса</p>
+        <div className="flex flex-col items-center text-center">
+          <div className="flex items-center gap-2 ml-[24px] pb-4">
+            <span className="text-5xl">💰</span>
+            <h1 className="bg-gradient-to-b from-bank_green to-[#B5DDAB] text-5xl font-semibold bg-clip-text text-transparent">{bonusVal} тг
+            </h1>
+          </div>
+
+          <p className="text-base font-normal text-gray-600">Размер Бонуса</p>
         </div>
       </div>
     </div>
