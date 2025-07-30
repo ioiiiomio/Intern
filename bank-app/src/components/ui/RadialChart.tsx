@@ -3,6 +3,7 @@
 import { LeafyGreen, TrendingUp } from "lucide-react"
 import {
   Label,
+  PolarAngleAxis,
   PolarGrid,
   PolarRadiusAxis,
   RadialBar,
@@ -18,33 +19,30 @@ import {
   CardTitle,
 } from "./card"
 import { ChartConfig, ChartContainer } from './Chart'
+import { getValueByDataKey } from "recharts/types/util/ChartUtils"
+import { faker, Faker } from "@faker-js/faker"
 
 export const description = "A radial chart with text"
 
-const chartData = [
-  { name: "Кредиты",
-    credits: 75,
-    fill: "#32CD32",
-  },
-]
-
 const chartConfig = {
   credits: {
-    label: "credits",
+    label: "Credits",
   },
-  // safari: {
-  //   label: "Safari",
-  //   color: "var(--chart-2)",
-  // },
 } satisfies ChartConfig
 
-export function ChartRadialText() {
+
+
+export function ChartRadialText({ value = faker.number.int({min: 0, max: 100}) }: { value?: number }) {
+  const chartData = [
+  {
+    name: "Credits",
+    credits: 70,
+    fill: "blue",
+
+  }, 
+]
   return (
     <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        {/* <CardTitle>Radial Chart - Text</CardTitle>
-        <CardDescription>January - June 2024</CardDescription> */}
-      </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
@@ -52,21 +50,22 @@ export function ChartRadialText() {
         >
           <RadialBarChart
             data={chartData}
-            startAngle={-44.74}
-            endAngle={-44.74 + 270}
+            startAngle={-44.74 + 270}
+            endAngle={-44.74}
             innerRadius={88}
             outerRadius={160}
+            barSize={24}
           >
             <PolarGrid
               gridType="circle"
               radialLines={false}
               stroke="none"
               className="first:fill-muted last:fill-background"
-              polarRadius={[86, 74]}
             />
             
-            <RadialBar dataKey="Кредиты" background cornerRadius={10} />
-            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
+            <RadialBar dataKey="credits" background cornerRadius={10}  />
+            <PolarAngleAxis tick={false} tickLine={false} axisLine={false} domain={[0, 100]} type="number" angleAxisId={0} />
+              <PolarRadiusAxis  tick={false} tickLine={false} axisLine={false}>
               <Label
                 content={({ viewBox }) => {
                   if (viewBox && "cx" in viewBox && "cy" in viewBox) {
@@ -82,7 +81,7 @@ export function ChartRadialText() {
                           y={viewBox.cy}
                           className="fill-foreground text-4xl text-text_color_secondary font-bold"
                         >
-                          {chartData[0].credits.toLocaleString()}
+                          <tspan>{chartData[0].credits.toLocaleString()}%</tspan>
                         </tspan>
                         <tspan
                           x={viewBox.cx}
@@ -96,18 +95,13 @@ export function ChartRadialText() {
                   }
                 }}
               />
-            </PolarRadiusAxis>
+              </PolarRadiusAxis>
           </RadialBarChart>
         </ChartContainer>
       </CardContent>
-      {/* <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter> */}
     </Card>
   )
 }
+
+
+      

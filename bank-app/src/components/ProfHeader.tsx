@@ -17,8 +17,8 @@ function ProfHeader(){
                     alt="Profile"
                 />
                 <div>
-                    <h1 className="text-lg font-semibold">{nameOfHuman}</h1>
-                    <h2 className="text-sm text-gray-500">Managér</h2>
+                    <h1 className="text-2xl font-semibold">{nameOfHuman}</h1>
+                    <h2 className="text-lg text-gray-500">Managér</h2>
                 </div>
             </div>
                 <div className="flex gap-12">
