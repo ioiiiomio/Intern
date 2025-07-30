@@ -47,13 +47,13 @@ return (
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square h-[216px] w-[216px]"
+          className="mx-auto aspect-square h-[232px] w-[216px]"
         >
           <RadialBarChart
             data={chartData}
             startAngle={-44.74 + 270}
             endAngle={-44.74}
-            innerRadius={88}
+            innerRadius={90}
             outerRadius={160}
             barSize={24}
           >
@@ -92,7 +92,7 @@ return (
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-4xl text-text_color_secondary font-bold"
+                          className="text-4xl fill-text_color_secondary font-bold"
                         >
                           <tspan>{chartData[0].credits.toLocaleString()}%</tspan>
                         </tspan>

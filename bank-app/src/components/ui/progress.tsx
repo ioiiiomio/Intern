@@ -7,7 +7,6 @@ import { cn } from "../../lib/utils"
 type ProgressProps = React.ComponentProps<typeof ProgressPrimitive.Root> & {
   value: number
   gradient?: string, 
-  length: number, 
   // Class from Tailwnd
 }
 
@@ -21,7 +20,6 @@ function Progress({ className, value, gradient, ...props }: ProgressProps) {
         "bg-background_prime relative h-4 overflow-hidden rounded-full border border-border_color",
         className
       )}
-      style={{ width: `${props.length}px` }}
       {...props}
     >
       <ProgressPrimitive.Indicator

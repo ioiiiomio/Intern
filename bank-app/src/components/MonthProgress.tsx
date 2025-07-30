@@ -3,14 +3,15 @@ import { ChartRadialText } from "./ui/RadialChart";
 const bonusVal = 120000;
 
 function MonthProgress() {
+  // add confetti
   return (
     
     <div className="w-full">
-      <h1 className="font-semibold text-xl mb-4">Общее исполнение за месяц</h1>
+      <h1 className="font-semibold text-xl mb-6">Общее исполнение за месяц</h1>
 
-      <div className="flex justify-between items-center m-4">
+      <div className="flex justify-between items-center mt-8">
         {/* Left Radial Chart */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center ">
           <ChartRadialText />
         </div>
 
