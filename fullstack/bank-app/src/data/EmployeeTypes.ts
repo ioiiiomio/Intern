@@ -1,5 +1,5 @@
 export type EmployeePerformance = {
-    pic: string, //not usig it for nau
+  pic: string, //not usig it for nau
   employee: string,
   rating: number,
   dynamics: string,

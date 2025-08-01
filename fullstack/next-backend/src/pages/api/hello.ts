@@ -31,5 +31,5 @@ export default async function handler(
 ) {
   await runMiddleware(req, res, cors);
 
-  res.status(200).json({ message: 'Hello from Next.js API!' });
+  res.status(200).json({ message: 'next API works' });
 }
