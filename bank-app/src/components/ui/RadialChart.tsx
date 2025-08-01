@@ -16,7 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./card"
-import { ChartConfig, ChartContainer } from './Chart'
+import { ChartConfig, ChartContainer } from './chart'
 import { faker, Faker } from "@faker-js/faker"
 
 export const description = "A radial chart with text"
