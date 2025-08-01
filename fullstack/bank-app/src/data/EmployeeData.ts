@@ -1,5 +1,6 @@
 import { faker, Faker } from "@faker-js/faker"
 import { EmployeePerformance } from "./EmployeeTypes"
+import { useEffect } from "react";
 
 export async function getEmployeeData(): Promise<EmployeePerformance[]> {
     // Kostyl but who caresss
@@ -20,6 +21,7 @@ export async function getEmployeeData(): Promise<EmployeePerformance[]> {
     period: periods[Math.floor(Math.random() * periods.length)],
   }))
 }
+
 
 
 // from FakerJS
