@@ -8,6 +8,7 @@ function MonthProgress() {
     
     <div className="w-full">
       <h1 className="font-semibold text-xl mb-6">Общее исполнение за месяц</h1>
+      <button>Update</button>
 
       <div className="flex justify-between items-center mt-8">
         {/* Left Radial Chart */}
