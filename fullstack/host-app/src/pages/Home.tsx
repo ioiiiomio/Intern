@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react"
 import SideBar from "../components/SideBar"
 
 
-const TablePage = React.lazy(() => import("bankApp/TablePage"))
-
 function HomePage() {
 
   return (
@@ -20,9 +18,8 @@ function HomePage() {
       <div className="flex flex-col space-y-4 min-h-0">
         {/* Header */}
           <React.Suspense fallback={<div>Loading Table...</div>}>
-            <TablePage />
+            <p> Here will be A table</p>
           </React.Suspense>
-        
       </div>
 
       {/* Right Padding Box */}
