@@ -1,25 +1,18 @@
 import React from "react";
+import TwoStepRewardItems from "./TwoStepRewardsItems";
 
 function TwoStepRewards(){
     return(
-        <div className="w-full flex gap-3">
-            <div className="border-text_color_secondary rounded-2xl">
-                <h1>fsdf</h1>
+        <div className="w-full">
+            <div className="mb-4">
+                <p className="size-xl font-semibold">Двухэтапные вознаграждения</p>
             </div>
-    
-            <div>
-                <h1>fsdf</h1>
-            </div>
-
-            <div>
-                <h1>fsdf</h1>
-             </div>
-
-            <div>
-                <h1>fsdf</h1>
+            <div> 
+                <TwoStepRewardItems />
             </div>
         </div>
     );
 }
+
 
 export default TwoStepRewards;

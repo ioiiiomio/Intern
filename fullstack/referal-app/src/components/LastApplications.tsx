@@ -2,21 +2,13 @@ import React from "react";
 
 function LastApplications(){
     return(
-        <div className="w-full flex gap-3">
-            <div className="border-text_color_secondary rounded-2xl">
-                <h1>fsdf</h1>
+        <div className="w-full">
+            <div className="mb-4">
+                <p className="size-xl font-semibold">Последние заявки</p>
             </div>
-    
             <div>
-                <h1>fsdf</h1>
-            </div>
+                <p>Заявки не найдены...</p>
 
-            <div>
-                <h1>fsdf</h1>
-             </div>
-
-            <div>
-                <h1>fsdf</h1>
             </div>
         </div>
     );
