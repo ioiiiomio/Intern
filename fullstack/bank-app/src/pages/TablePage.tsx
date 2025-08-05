@@ -12,7 +12,7 @@ import { columns } from "../components/ui/table/columns"
 import { getEmployeeData } from "../data/EmployeeData"
 import { EmployeePerformance } from "../data/EmployeeTypes"
 
-function HomePage() {
+function TablePage() {
 
   const [data, setData] = useState<EmployeePerformance[]>([])
 
@@ -63,4 +63,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default TablePage

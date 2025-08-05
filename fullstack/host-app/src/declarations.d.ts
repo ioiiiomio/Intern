@@ -1,7 +1,4 @@
-declare module "bank-app/MonthProgress"
-
-declare module "bank-app/MyProgress"
-
-declare module "bank-app/ProfHeader"
-
-declare module "bank-app/DataTable"
+declare module 'bankApp/TablePage' {
+  const Header: React.ComponentType<any>;
+  export default TableHeader;
+}

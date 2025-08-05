@@ -1,32 +1,31 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { ModuleFederationPlugin } = require('webpack').container;
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-module.exports = (_, argv) => ({
-  entry: './src/index.ts',
+
+module.exports = {
+  entry: './src/index.tsx',
   mode: 'development',
-
+  
   output: {
-    path: path.resolve(__dirname, 'build'),
-    publicPath: 'http://localhost:3003',
-  },
-
+      path: path.resolve(__dirname, 'build'),
+      publicPath: 'http://localhost:3001/',
+    },
   resolve: {
-    alias: { "@": path.resolve(__dirname, "./src") },
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
-    plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
+      alias: { "@": path.resolve(__dirname, "./src") },
+      extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+      plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
   },
-
+  
   devServer: {
     headers: { "Access-Control-Allow-Origin": "*" },
-    port: 3003,
+    port: 3001,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     static: { directory: path.resolve(__dirname, "public") },
   },
 
-
-  performance: { hints: false },
 
   module: {
     rules: [
@@ -47,11 +46,20 @@ module.exports = (_, argv) => ({
       },
     ],
   },
-  
-
   plugins: [
+    new ModuleFederationPlugin({
+      name: 'bankApp',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './TablePage': './src/pages/TablePage.tsx',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: '^19.1.0' },
+        'react-dom': { singleton: true, requiredVersion: '^19.1.0' },
+      },
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
   ],
-});
+};

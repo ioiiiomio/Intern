@@ -1,32 +1,32 @@
-//this is a sample
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { ModuleFederationPlugin } = require('webpack').container;
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = (_, argv) => ({
   entry: './src/index.ts',
   mode: 'development',
-
+  
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: 'http://localhost:3000/main',
+    // Necc full path for host
+    publicPath: 'http://localhost:3000/',
   },
-
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
   },
-
+  
   devServer: {
     headers: { "Access-Control-Allow-Origin": "*" },
+    // necc
     port: 3000,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     static: { directory: path.resolve(__dirname, "public") },
   },
-
-
+// ??
   performance: { hints: false },
 
   module: {
@@ -48,21 +48,19 @@ module.exports = (_, argv) => ({
       },
     ],
   },
-  
-
   plugins: [
-      new ModuleFederationPlugin({
-        name: 'hostApp',
-        remotes: {
-          remoteApp: '',
-        },
-        shared: {
-          react: { singleton: true, requiredVersion: '^19.1.0' },
-          'react-dom': { singleton: true, requiredVersion: '^19.1.0' },
-        },
-      }),
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-      }),
-    ],
+    new ModuleFederationPlugin({
+      name: 'hostApp',
+      remotes: {
+        remoteApp: 'bankApp@http://localhost:3001/tableApp.js',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: '^19.1.0' },
+        'react-dom': { singleton: true, requiredVersion: '^19.1.0' },
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
 });
