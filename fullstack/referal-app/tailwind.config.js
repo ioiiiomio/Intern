@@ -3,6 +3,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "../referalApp/src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {

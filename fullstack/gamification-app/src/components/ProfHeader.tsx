@@ -1,5 +1,6 @@
 import React from "react";
 import { faker, Faker } from "@faker-js/faker";
+import CheckIcon from "../../public/assets/check-ic.svg"
 
 const avatarGitHub = faker.image.avatarGitHub();
 const nameOfHuman = faker.person.fullName();
@@ -26,15 +27,15 @@ function ProfHeader(){
                         <h1 className='mb-3'>Минимальное количество кредитов</h1>
                         <div className="flex gap-6">
                             <div className="border w-11 h-11 rounded-full bg-bank_green_light flex items-center justify-center border-bank_green">
-                                <img className="w-5 h-5" src="../../assets/check-ic.svg" alt="check icon" />
+                                <CheckIcon className="w-5 h-5" />
                             </div>
 
                             <div className="border w-11 h-11 rounded-full bg-bank_green_light flex items-center justify-center border-bank_green">
-                                <img className="w-5 h-5" src="../../assets/check-ic.svg" alt="check icon" />
+                                <CheckIcon className="w-5 h-5" />
                             </div>
 
                             <div className="border w-11 h-11 rounded-full bg-bank_green_light flex items-center justify-center border-bank_green">
-                                <img className="w-5 h-5" src="../../assets/check-ic.svg" alt="check icon" />
+                                <CheckIcon className="w-5 h-5" />
                             </div>
 
                             <div className="border w-11 h-11 rounded-full bg-background_prime flex items-center justify-center border-border_color">
@@ -48,15 +49,15 @@ function ProfHeader(){
                             <h1 className="mb-3"> Минимальное количество депозитов</h1>
                             <div className="flex gap-6">
                             <div className="border w-11 h-11 rounded-full bg-bank_green_light flex items-center justify-center border-bank_green">
-                                <img className="w-5 h-5" src="../../assets/check-ic.svg" alt="check icon" />
+                                <CheckIcon className="w-5 h-5" />
                             </div>
 
                             <div className="border w-11 h-11 rounded-full bg-bank_green_light flex items-center justify-center border-bank_green">
-                                <img className="w-5 h-5" src="../../assets/check-ic.svg" alt="check icon" />
+                                <CheckIcon className="w-5 h-5" />
                             </div>
 
                             <div className="border w-11 h-11 rounded-full bg-bank_green_light flex items-center justify-center border-bank_green">
-                                <img className="w-5 h-5" src="../../assets/check-ic.svg" alt="check icon" />
+                                <CheckIcon className="w-5 h-5" />
                             </div>
 
                             <div className="border w-11 h-11 rounded-full bg-background_prime flex items-center justify-center border-border_color ">

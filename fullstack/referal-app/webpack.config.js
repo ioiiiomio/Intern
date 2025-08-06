@@ -10,7 +10,7 @@ module.exports = {
   
   output: {
       path: path.resolve(__dirname, 'build'),
-      publicPath: 'http://localhost:3001/',
+      publicPath: 'http://localhost:3002/',
     },
   resolve: {
       alias: { "@": path.resolve(__dirname, "./src") },
@@ -20,7 +20,7 @@ module.exports = {
   
   devServer: {
     headers: { "Access-Control-Allow-Origin": "*" },
-    port: 3001,
+    port: 3002,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     static: { directory: path.resolve(__dirname, "public") },
@@ -44,22 +44,20 @@ module.exports = {
         exclude: /node_modules/,
         use: { loader: "babel-loader" },
       },
-      // Штука чтобы грузить свг
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
-        // еще загрузить его надо чтобы он подгружал свг
         issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
       }
 
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'gamificationApp',
+      name: 'referalApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './TablePage': './src/pages/TablePage.tsx',
+        './ReferalPage': './src/pages/ReferalPage.tsx',
       },
       shared: {
         react: {

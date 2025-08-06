@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function SideBar(){
     return(
-        <div>
+        <div className="fixed bg-background_secondary rounded-2xl border border-border_color h-[1042px]">
            <div>
             <img className="justify-center max-w-40% mt-[25.27px] mb-[25.27px] mr-[27.84px] ml-[16px] w-[211.1630096435547] h-[27.45166015625px]" src="../../assets/Nurbank-pic.svg" />
            </div>
@@ -30,7 +31,7 @@ function SideBar(){
             </div>
             <div className="flex justify gap-4 mb-4">
                 <img className="" src="../../assets/icons/chart-line-ic.svg" />
-                <p className="my-1">Рейтинговая модель</p>
+                <Link to="/referral" className="my-1">Рейтинговая модель</Link>
                 <img className="align-end" src="../../assets/icons/chevron-down-ic.svg" />
             </div>
             <div className="flex justify gap-4 mb-4">
@@ -47,7 +48,7 @@ function SideBar(){
             </div>
             <div className="flex justify gap-4 mb-4 text-lg">
                 <img className="" src="../../assets/icons/ORM-ic.svg" />
-                <p className="my-1 text-blue_accent">Game</p>
+                <Link to="/game" className="my-1 text-blue_accent">Game</Link>
             </div>
            </div>
         </div>

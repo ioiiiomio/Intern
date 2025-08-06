@@ -1,6 +1,10 @@
 // Здесь про заявки: Всего, успешные, Ожидают, Вознаграждения
 
 import React from "react";
+import FileIcon from "../../public/assets/icons/file-ic.svg"
+import CheckIcon from "../../public/assets/icons/check-ic.svg"
+import WaitingIcon from "../../public/assets/icons/waiting-ic.svg"
+import RewardIcon from "../../public/assets/icons/reward-ic.svg"
 
 function Applications(){
     const temporary = 12;
@@ -16,7 +20,7 @@ function Applications(){
                     </div>
                 </div>
                 <div className="ml-3">
-                    <img src='../../assets/icons/file-ic.svg' alt="file-ic"/>
+                    <FileIcon />
                 </div>
             </div>
     
@@ -30,7 +34,7 @@ function Applications(){
                     </div>
                 </div>
                 <div className="ml-3">
-                    <img src='../../assets/icons/check-ic.svg' alt="file-ic"/>
+                    <CheckIcon />
                 </div>
             </div>
 
@@ -44,7 +48,7 @@ function Applications(){
                     </div>
                 </div>
                 <div className="ml-3">
-                    <img src='../../assets/icons/waiting-ic.svg' alt="file-ic"/>
+                    <WaitingIcon />
                 </div>
             </div>
 
@@ -58,7 +62,7 @@ function Applications(){
                     </div>
                 </div>
                 <div className="ml-3">
-                    <img src='../../assets/icons/reward-ic.svg' alt="file-ic"/>
+                    <RewardIcon />
                 </div>
             </div>
         </div>

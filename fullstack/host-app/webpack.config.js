@@ -46,6 +46,13 @@ module.exports = (_, argv) => ({
         exclude: /node_modules/,
         use: { loader: "babel-loader" },
       },
+      // Штука чтобы грузить свг
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+        // еще загрузить его надо чтобы он подгружал свг
+        issuer: /\.[jt]sx?$/,
+      }
     ],
   },
   plugins: [
@@ -53,6 +60,7 @@ module.exports = (_, argv) => ({
       name: 'hostApp',
       remotes: {
         gamificationApp: 'gamificationApp@http://localhost:3001/remoteEntry.js',
+        referalApp: 'referalApp@http://localhost:3002/remoteEntry.js',
       },
       shared: {
         react: {
@@ -65,6 +73,7 @@ module.exports = (_, argv) => ({
           requiredVersion: '^19.1.0',
           eager: true, 
         },
+        '@radix-ui/react-icons': { singleton: true, eager: true },
       }
     }),
     new HtmlWebpackPlugin({

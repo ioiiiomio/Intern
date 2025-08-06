@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
+// импортим тэйлвинд чтобы хост обрабатывал стили
 import "tailwindcss/tailwind.css";
 import MyProgress from "../components/MyProgress"
 import MonthProgress from "../components/MonthProgress"
@@ -23,8 +24,7 @@ function TablePage() {
   }, [])
 
   return (
-    <div className="w-screen min-h-screen bg-background_prime p-4 text-text-color font-inter">
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-4 no-scrollbar overflow-y-scroll">
         {/* Page Title */}
         <h1 className="text-2xl font-semibold">Статистика сотрудников</h1>
 
@@ -48,7 +48,6 @@ function TablePage() {
           <DataTable columns={columns} data={data} />
         </div>
       </div>
-    </div>
 )
   // return(
 
