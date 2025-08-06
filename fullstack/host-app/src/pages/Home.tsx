@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import SideBar from "../components/SideBar"
 import TablePage from "./TablePage"
+import TablePageC from "./TablePageC"
 
 
 
