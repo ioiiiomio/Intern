@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react"
 import SideBar from "../components/SideBar"
+import TablePage from "./TablePage"
+
 
 
 function HomePage() {
@@ -18,7 +20,7 @@ function HomePage() {
       <div className="flex flex-col space-y-4 min-h-0">
         {/* Header */}
           <React.Suspense fallback={<div>Loading Table...</div>}>
-            <p> Here will be A table</p>
+            <TablePage />
           </React.Suspense>
       </div>
 

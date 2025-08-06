@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import SideBar from './components/SideBar';
 import HomePage from './pages/Home';
+import './index.css';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

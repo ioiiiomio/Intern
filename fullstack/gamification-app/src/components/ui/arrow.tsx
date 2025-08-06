@@ -1,3 +1,4 @@
+import React from "react";
 import { ArrowUpRight, ArrowDownLeft } from "lucide-react";
 
 export function arrowIcon(dynamics: string) {

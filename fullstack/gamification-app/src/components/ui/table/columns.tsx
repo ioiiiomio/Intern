@@ -1,5 +1,5 @@
 "use client"
-
+import React from "react";
 import { ColumnDef } from "@tanstack/react-table"
 import { EmployeePerformance } from "../../../data/EmployeeTypes"
 import { Progress } from "../progress";

@@ -10,7 +10,7 @@ import SalaryProjects from "../components/SalaryProjects"
 
 function ReferalPage() {
   return (
-    <div className="w-screen min-h-screen bg-background_prime p-4 text-text-color">
+    <div className="w-screen min-h-screen bg-background_prime p-4 text-text-color font-">
       <div className="flex flex-col space-y-4">
         <h1 className="text-2xl font-semibold">Реферальная программа</h1>
 

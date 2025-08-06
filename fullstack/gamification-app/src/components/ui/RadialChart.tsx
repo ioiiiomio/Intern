@@ -1,3 +1,4 @@
+import React from "react"
 import { LeafyGreen, TrendingUp } from "lucide-react"
 import {
   Label,

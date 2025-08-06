@@ -1,4 +1,6 @@
-declare module 'bankApp/TablePage' {
-  const Header: React.ComponentType<any>;
+declare module 'gamificationApp/TablePage' {
+  const TableHeader: React.ComponentType<any>;
   export default TableHeader;
 }
+
+declare module "gamificationApp/TablePage"

@@ -48,15 +48,26 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'bankApp',
+      name: 'gamificationApp',
       filename: 'remoteEntry.js',
       exposes: {
         './TablePage': './src/pages/TablePage.tsx',
       },
       shared: {
-        react: { singleton: true, requiredVersion: '^19.1.0' },
-        'react-dom': { singleton: true, requiredVersion: '^19.1.0' },
-      },
+        react: {
+          singleton: true,
+          requiredVersion: '^19.1.0',
+          eager: true, 
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: '^19.1.0',
+          eager: true, 
+        },
+        "@radix-ui/react-slot": { singleton: true },
+        "class-variance-authority": { singleton: true },
+        "tailwind-variants": { singleton: true },
+      }
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',

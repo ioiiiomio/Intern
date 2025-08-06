@@ -1,3 +1,4 @@
+import React from "react";
 import { ChartRadialText } from "./ui/RadialChart";
 
 const bonusVal = 120000;
