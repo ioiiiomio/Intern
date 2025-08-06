@@ -5,7 +5,7 @@ function TwoStepRewards(){
     return(
         <div className="w-full">
             <div className="mb-4">
-                <p className="size-xl font-semibold">Двухэтапные вознаграждения</p>
+                <p className="text-xl font-semibold">Двухэтапные вознаграждения</p>
             </div>
             <div> 
                 <TwoStepRewardItems />
