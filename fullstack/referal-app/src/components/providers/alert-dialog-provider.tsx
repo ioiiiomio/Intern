@@ -92,8 +92,8 @@ export const AlertDialogProvider = ({ children }: { children: ReactNode }) => {
           {options?.actionText === "Сохранить" && (
             <div className="space-y-4 mb-4">
               <div>
-                <label className="text-sm text-text_color_secondary">
-                  Сумма 1
+                <label className="text-xs mb-2 text-text_color_secondary">
+                  Сумма 1-го этапа
                 </label>
                 <Input
                   type="number"
@@ -102,8 +102,8 @@ export const AlertDialogProvider = ({ children }: { children: ReactNode }) => {
                 />
               </div>
               <div>
-                <label className="text-sm text-text_color_secondary">
-                  Сумма 2
+                <label className="text-xs mb-2 text-text_color_third">
+                  Сумма 2-го этапа
                 </label>
                 <Input
                   type="number"
@@ -112,11 +112,12 @@ export const AlertDialogProvider = ({ children }: { children: ReactNode }) => {
                 />
               </div>
               <div>
-                <label className="text-sm text-text_color_secondary">
-                  Комментарий
+                <label className="text-xs mb-2 text-text_color_third">
+                  Примечания
                 </label>
                 <Textarea
-                  placeholder="Комментарий (необязательно)"
+                  className="text-m text-text_color_third"
+                  placeholder="Введите текст..."
                   value={comments}
                   onChange={(e) => setComments(e.target.value)}
                 />
