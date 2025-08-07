@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import {
   AlertDialog,
-  AlertDialogTrigger,
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogFooter,
@@ -10,15 +9,23 @@ import {
   AlertDialogCancel,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
-import { Button } from "../ui/button";
 import { X } from "lucide-react";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 type AlertDialogOptions = {
   title: string;
   description?: string;
+  firstSum?: number;
+  secondSum?: number;
+  comments?: string;
   cancelText?: string;
   actionText?: string;
-  onConfirm?: () => void;
+  onConfirm?: (data?: {
+    firstSum: number;
+    secondSum: number;
+    comments: string;
+  }) => void;
 };
 
 type AlertDialogContextType = {
@@ -38,13 +45,24 @@ export const AlertDialogProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [options, setOptions] = useState<AlertDialogOptions | null>(null);
 
+  const [firstSum, setFirstSum] = useState<number | undefined>();
+  const [secondSum, setSecondSum] = useState<number | undefined>();
+  const [comments, setComments] = useState<string>("");
+
   const showAlert = (opts: AlertDialogOptions) => {
     setOptions(opts);
+    setFirstSum(opts.firstSum ?? 0);
+    setSecondSum(opts.secondSum ?? 0);
+    setComments(opts.comments ?? "");
     setIsOpen(true);
   };
 
   const handleConfirm = () => {
-    options?.onConfirm?.();
+    options?.onConfirm?.({
+      firstSum: firstSum || 0,
+      secondSum: secondSum || 0,
+      comments,
+    });
     setIsOpen(false);
   };
 
@@ -52,29 +70,70 @@ export const AlertDialogProvider = ({ children }: { children: ReactNode }) => {
     <AlertDialogContext.Provider value={{ showAlert }}>
       {children}
       <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
-        <AlertDialogContent className="bg-white w-[580px] h-48 p-6">
+        <AlertDialogContent className="bg-white w-[580px] p-6 justify-self-center">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          >
+            <X className="w-5 h-5" />
+          </button>
           <AlertDialogHeader>
-            <AlertDialogTitle className="text-xl font-semibold mb-4 flex justify-between">
+            <AlertDialogTitle className="text-xl font-semibold mb-4">
               {options?.title}
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-              >
-                <X className="text-text_color w-8 h-8" />
-              </button>
             </AlertDialogTitle>
             {options?.description && (
-              <AlertDialogDescription className="text-base text-text_color_secondary">
+              <AlertDialogDescription className="text-base text-text_color_secondary mb-4">
                 {options.description}
               </AlertDialogDescription>
             )}
           </AlertDialogHeader>
+
+          {/* Editable Fields (shown only if editing) */}
+          {options?.actionText === "Сохранить" && (
+            <div className="space-y-4 mb-4">
+              <div>
+                <label className="text-sm text-text_color_secondary">
+                  Сумма 1
+                </label>
+                <Input
+                  type="number"
+                  value={firstSum}
+                  onChange={(e) => setFirstSum(Number(e.target.value))}
+                />
+              </div>
+              <div>
+                <label className="text-sm text-text_color_secondary">
+                  Сумма 2
+                </label>
+                <Input
+                  type="number"
+                  value={secondSum}
+                  onChange={(e) => setSecondSum(Number(e.target.value))}
+                />
+              </div>
+              <div>
+                <label className="text-sm text-text_color_secondary">
+                  Комментарий
+                </label>
+                <Textarea
+                  placeholder="Комментарий (необязательно)"
+                  value={comments}
+                  onChange={(e) => setComments(e.target.value)}
+                />
+              </div>
+            </div>
+          )}
+
           <AlertDialogFooter>
             <AlertDialogCancel className="bg-background_prime mr-2 w-35">
               {options?.cancelText ?? "Отмена"}
             </AlertDialogCancel>
             <AlertDialogAction
-              className="bg-bank_red text-white w-35"
+              className={`text-white w-35 ${
+                options?.actionText === "Сохранить"
+                  ? "bg-blue-500"
+                  : "bg-bank_red"
+              }`}
               onClick={handleConfirm}
             >
               {options?.actionText ?? "Продолжить"}

@@ -28,7 +28,7 @@ function TwoStepRewardItems() {
           </div>
           <div className="flex gap-3">
             <Trash2
-              className="text-bank_red"
+              className="text-bank_red w-6 h-6 cursor-pointer"
               onClick={() =>
                 showAlert({
                   title: "Удалить вознаграждение?",
@@ -38,10 +38,23 @@ function TwoStepRewardItems() {
                   onConfirm: () => alert("Удалено типа ;>"),
                 })
               }
-            >
-              Test Alert
-            </Trash2>
-            <SquarePen className="text-text_color w-6 h-6" />
+            />
+            <SquarePen
+              className="text-text_color w-6 h-6 cursor-pointer"
+              onClick={() =>
+                showAlert({
+                  title: "Редактирование вознаграждения",
+                  actionText: "Сохранить",
+                  cancelText: "Отмена",
+                  firstSum: 25000,
+                  secondSum: 25000,
+                  comments: "",
+                  onConfirm: (data) => {
+                    console.log("Edited values:", data);
+                  },
+                })
+              }
+            />
           </div>
         </div>
       </div>
