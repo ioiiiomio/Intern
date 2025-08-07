@@ -1,17 +1,10 @@
-//index.tsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import ReferalPage from './pages/ReferalPage';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import ReferalPage from "./pages/ReferalPage";
+import { AlertDialogProvider } from "./components/providers/alert-dialog-provider";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ReferalPage />
   </React.StrictMode>
 );
-
-export{}
