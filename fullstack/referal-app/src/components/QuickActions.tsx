@@ -1,9 +1,9 @@
 import React from "react";
-import PlusIcon from "../../public/assets/icons/plus-ic.svg"
-import CalculatorIcon from "../../public/assets/icons/calculator-ic.svg"
-import WorkflowIcon from "../../public/assets/icons/workflow-ic.svg"
-import SearchIcon from "../../public/assets/icons/search-ic.svg"
-import ExportIcon from "../../public/assets/icons/export-ic.svg"
+import PlusIcon from "../../public/assets/icons/plus-ic.svg";
+import CalculatorIcon from "../../public/assets/icons/calculator-ic.svg";
+import WorkflowIcon from "../../public/assets/icons/workflow-ic.svg";
+import SearchIcon from "../../public/assets/icons/search-ic.svg";
+import ExportIcon from "../../public/assets/icons/export-ic.svg";
 
 function QuickActions() {
   return (
@@ -14,33 +14,33 @@ function QuickActions() {
 
       <div className="flex gap-2.5 flex-wrap justify-between">
         {/* Button 1 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-bank_blue">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-blue_accent">
           <PlusIcon className="w-4 h-4" />
           <p className="text-white font-medium text-base">Новая заявка</p>
         </div>
 
         {/* Button 2 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
           <CalculatorIcon className="w-4 h-4" />
-          <p className="text-text_color font-medium text-base">Симуляция</p>
+          <p className="font-medium text-base">Симуляция</p>
         </div>
 
         {/* Button 3 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
           <WorkflowIcon className="w-4 h-4" />
-          <p className="text-text_color font-medium text-base">Workflow</p>
+          <p className="font-medium text-base">Workflow</p>
         </div>
 
         {/* Button 4 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
           <SearchIcon className="w-4 h-4" />
-          <p className="text-text_color font-medium text-base">Поиск клиента</p>
+          <p className="font-medium text-base">Поиск клиента</p>
         </div>
 
         {/* Button 5 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
           <ExportIcon className="w-4 h-4" />
-          <p className="text-text_color font-medium text-base">Экспорт отчета</p>
+          <p className="font-medium text-base">Экспорт отчета</p>
         </div>
       </div>
     </div>

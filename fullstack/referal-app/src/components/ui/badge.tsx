@@ -16,7 +16,7 @@ const badgeVariants = cva(
         outline:
           "text-foreground border border-border hover:bg-accent hover:text-accent-foreground",
         paid: "bg-bank_green text-white",
-        checked: "bg-bank_blue text-white",
+        checked: "bg-blue_accent text-white",
         waiting: "bg-text_color_secondary text-text-color",
         declined: "",
         // upd declined later, ask alisher

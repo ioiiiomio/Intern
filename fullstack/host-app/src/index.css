@@ -2,28 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&display=swap');
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&display=swap");
+
 @layer utilities {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-     /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-    }
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Gradient backgrounds (default) */
+  .gradient-bad {
+    @apply from-white via-red-50 to-red-500 bg-gradient-to-r;
+  }
+  .gradient-avg {
+    @apply from-orange-200 to-orange-400 bg-gradient-to-r;
+  }
+  .gradient-good {
+    @apply from-lime-200 via-lime-400 to-bank_green bg-gradient-to-r;
+  }
+
+  /* Barbie theme overrides */
+  body.barbie-theme .gradient-bad {
+    @apply from-pink-50 via-pink-200 to-pink-500 bg-gradient-to-r;
+  }
+  body.barbie-theme .gradient-avg {
+    @apply from-pink-200 to-pink-400 bg-gradient-to-r;
+  }
+  body.barbie-theme .gradient-good {
+    @apply from-pink-300 via-pink-500 to-pink-700 bg-gradient-to-r;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* CSS Variable defaults */
+:root {
+  --background_prime: #f5f5f5;
+  --background_secondary: #ffffff;
+  --text_color: #353b41;
+  --text_color_secondary: #8c9197;
+  --bank_green: #4ca436;
+  --bank_green_light: #ebfce7;
+  --bank_orange: #ea9632;
+  --bank_red: #cd3737;
+  --border_color: #e2e2e2;
+  --blue_accent: #0077c8;
+}
+
+/* Barbie theme variable overrides */
+body.barbie-theme {
+  --background_prime: #fff0f6;
+  --background_secondary: #ffe6f0;
+  --text_color: #a8006a;
+  --text_color_secondary: #d56ea3;
+  --blue_accent: #e0218a;
+  --bank_green: #a8006a;
+}
+
+/* Optional: full screen canvas for confetti */
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
 }
