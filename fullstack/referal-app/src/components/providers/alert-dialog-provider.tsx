@@ -51,8 +51,8 @@ export const AlertDialogProvider = ({ children }: { children: ReactNode }) => {
 
   const showAlert = (opts: AlertDialogOptions) => {
     setOptions(opts);
-    setFirstSum(opts.firstSum ?? 0);
-    setSecondSum(opts.secondSum ?? 0);
+    setFirstSum(opts.firstSum ?? 1);
+    setSecondSum(opts.secondSum ?? 1);
     setComments(opts.comments ?? "");
     setIsOpen(true);
   };

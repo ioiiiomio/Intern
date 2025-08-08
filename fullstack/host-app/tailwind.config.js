@@ -1,26 +1,29 @@
-//host-app/tailwind.config.js: 
+//host-app/tailwind.config.js:
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "../gamificationApp/src/**/*.{js,jsx,ts,tsx}",
-    "../referalApp/src/**/*.{js,jsx,ts,tsx}"
+    "../referalApp/src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         background_prime: "#F5F5F5",
         background_secondary: "#FFFFFF",
-        text_color: '#353B41',
-        text_color_secondary: '#8C9197',
-        bank_green: '#4CA436',
-        bank_green_light: '#EBFCE7',
-        bank_orange: '#EA9632',
-        bank_red: '#CD3737',
-        border_color: '#E2E2E2',
-        blue_accent: '#0077C8'
+        text_color: "#353B41",
+        text_color_secondary: "#8C9197",
+        bank_green: "#4CA436",
+        bank_green_light: "#EBFCE7",
+        bank_orange: "#EA9632",
+        bank_red: "#CD3737",
+        border_color: "#E2E2E2",
+        blue_accent: "#0077C8",
+
+        // ;>
+        barbie_pink: "#E0218A",
       },
     },
   },
   plugins: [],
-}
+};
