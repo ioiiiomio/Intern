@@ -20,25 +20,25 @@ function QuickActions() {
         </div>
 
         {/* Button 2 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
           <CalculatorIcon className="w-4 h-4" />
           <p className="font-medium text-base">Симуляция</p>
         </div>
 
         {/* Button 3 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
           <WorkflowIcon className="w-4 h-4" />
           <p className="font-medium text-base">Workflow</p>
         </div>
 
         {/* Button 4 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
           <SearchIcon className="w-4 h-4" />
           <p className="font-medium text-base">Поиск клиента</p>
         </div>
 
         {/* Button 5 */}
-        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-white">
+        <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-background_prime">
           <ExportIcon className="w-4 h-4" />
           <p className="font-medium text-base">Экспорт отчета</p>
         </div>
