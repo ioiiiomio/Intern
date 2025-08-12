@@ -80,7 +80,7 @@ function TwoStepRewardPayments() {
   return (
     <div className="w-full h-[132px] flex border rounded-xl bg-background_prime p-6">
       {/* Тут ширина пока такая, без понятия почему она по себе не помещается нормально */}
-      <div className="w-[467px] h-[84px] border">
+      <div className="w-full h-[84px]">
         <div className="flex gap-2 align-center mb-3">
           <CircleCheckBig className="text-bank_green" />
           <p className="text-xl font-semibold">Дата</p>
@@ -91,7 +91,7 @@ function TwoStepRewardPayments() {
           Статус здесь
         </p>
       </div>
-      <div className="border">
+      <div className="justify-self-end">
         <Badge variant="paid">Рассчитано</Badge>
       </div>
     </div>
