@@ -12,7 +12,7 @@ function QuickActions() {
         <h1 className="font-semibold text-xl">Быстрые действия</h1>
       </div>
 
-      <div className="flex gap-2.5 flex-wrap justify-between">
+      <div className="flex gap-2.5 flex justify-between">
         {/* Button 1 */}
         <div className="w-[259px] h-[51px] flex items-center justify-center gap-4 rounded-2xl bg-blue_accent">
           <PlusIcon className="w-4 h-4" />

@@ -1,36 +1,32 @@
 import React from "react";
 import { Progress } from "./ui/progress";
-import {
-  AlarmCheckIcon,
-  CircleCheckBig,
-  SquarePen,
-  Trash2,
-} from "lucide-react";
+import { CircleCheckBig, SquarePen, Trash2 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { useAlertDialog } from "./providers/alert-dialog-provider";
-import { title } from "process";
+import type { DoubleReward, Stage } from "../data/twoStepRewards";
 
-function TwoStepRewardItems() {
-  let temporary = 50000;
-  let ticket_name = "REF-1234567";
-  let finance_type = "Депозит";
+interface TwoStepRewardItemsProps {
+  reward: DoubleReward;
+}
 
+function TwoStepRewardItems({ reward }: TwoStepRewardItemsProps) {
   const { showAlert } = useAlertDialog();
 
   return (
-    <div className="border rounded-xl p-6 w-full h-74">
-      {/* <p>эту штуку вызывает внутри себя Двухэтапка</p> */}
+    <div className="border rounded-xl p-6 w-full h-74 mb-2">
       <div className="flex justify-between mb-4">
         <div>
-          <p className="text-xl font-semibold">{ticket_name}</p>
-          <p className="text-text_color_secondary">{finance_type}</p>
+          <p className="text-xl font-semibold">{reward.requestID}</p>
+          <p className="text-text_color_secondary">{reward.productType}</p>
         </div>
         <div className="flex gap-6">
           <div>
             <p className="text-base text-text_color_secondary mb-2">
               Общая сумма
             </p>
-            <p className="text-xl font-semibold text-text_color">{temporary}</p>
+            <p className="text-xl font-semibold text-text_color">
+              {reward.sum}
+            </p>
           </div>
           <div className="flex gap-3">
             <Trash2
@@ -38,10 +34,10 @@ function TwoStepRewardItems() {
               onClick={() =>
                 showAlert({
                   title: "Удалить вознаграждение?",
-                  description: `Это действие нельзя отменить. Вознаграждение на сумму ${temporary} КЗТ будет удалено Навсегда.`,
+                  description: `Это действие нельзя отменить. Вознаграждение на сумму ${reward.sum} КЗТ будет удалено навсегда.`,
                   cancelText: "Отменить",
                   actionText: "Удалить",
-                  onConfirm: () => alert("Удалено типа ;>"),
+                  onConfirm: () => alert("Удалено"),
                 })
               }
             />
@@ -52,9 +48,9 @@ function TwoStepRewardItems() {
                   title: "Редактирование вознаграждения",
                   actionText: "Сохранить",
                   cancelText: "Отмена",
-                  firstSum: 25000,
-                  secondSum: 25000,
-                  comments: "",
+                  firstSum: reward.stages[0]?.sum || 0,
+                  secondSum: reward.stages[1]?.sum || 0,
+                  comments: reward.activeComments || "",
                   onConfirm: (data) => {
                     console.log("Edited values:", data);
                   },
@@ -64,35 +60,57 @@ function TwoStepRewardItems() {
           </div>
         </div>
       </div>
+
       <div className="mb-4">
         <p className="mb-2 text-sm font-medium">Прогресс выплат</p>
-        <Progress value={75} className="w-full" />
+        <Progress
+          value={
+            (reward.stages.filter((s) => s.status === "Выплачено").length /
+              reward.stages.length) *
+            100
+          }
+          className="w-full"
+        />
       </div>
+
       <div className="flex gap-4 justify-between">
-        <TwoStepRewardPayments />
-        <TwoStepRewardPayments />
+        {reward.stages.map((stage) => (
+          <TwoStepRewardPayments key={stage.stageInd} stage={stage} />
+        ))}
       </div>
     </div>
   );
 }
 
-function TwoStepRewardPayments() {
+function TwoStepRewardPayments({ stage }: { stage: Stage }) {
   return (
     <div className="w-full h-[132px] flex border rounded-xl bg-background_prime p-6">
-      {/* Тут ширина пока такая, без понятия почему она по себе не помещается нормально */}
       <div className="w-full h-[84px]">
         <div className="flex gap-2 align-center mb-3">
-          <CircleCheckBig className="text-bank_green" />
-          <p className="text-xl font-semibold">Дата</p>
+          <CircleCheckBig
+            className={
+              stage.status === "Выплачено" ? "text-bank_green" : "text-gray-400"
+            }
+          />
+          <p className="text-xl font-semibold">30 дней</p>
         </div>
-
-        <p className="mb-3 size-base font-medium">50 000тг</p>
+        <p className="mb-3 size-base font-medium">{stage.sum}тг</p>
         <p className="size-sm font-regular text-text_color_secondary">
-          Статус здесь
+          {stage.remainingTime}
         </p>
       </div>
       <div className="justify-self-end">
-        <Badge variant="paid">Рассчитано</Badge>
+        <Badge
+          variant={
+            stage.status === "Выплачено"
+              ? "paid"
+              : stage.status === "Рассчитано"
+              ? "checked"
+              : "waiting"
+          }
+        >
+          {stage.status}
+        </Badge>
       </div>
     </div>
   );

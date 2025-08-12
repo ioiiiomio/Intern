@@ -1,4 +1,3 @@
-//host-app/tsconfig.json
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -16,5 +15,5 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "../host-app/src/Test.tsx"]
 }

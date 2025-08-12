@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Users } from "lucide-react";
 
 function SideBar() {
   const [barbieTheme, setBarbieTheme] = useState(false);
@@ -21,7 +22,7 @@ function SideBar() {
     <div className="fixed bg-white rounded-2xl border border-border_color h-[1042px]">
       <div>
         <img
-          className="justify-center max-w-40% mt-[25.27px] mb-[25.27px] mr-[27.84px] ml-[16px] w-[211.1630096435547px] h-[27.45166015625px]"
+          className="justify-center max-w-40% mt-[25.27px] mb-[25.27px] mr-[27.84px] ml-[16px] max-w-[211.1630096435547px] h-[27.45166015625px]"
           src="../../assets/Nurbank-pic.svg"
           alt="Nurbank Logo"
         />
@@ -33,8 +34,16 @@ function SideBar() {
           <p className="my-1">Поиск Клиента</p>
         </div>
         <div className="flex justify gap-4 mb-4">
+          <Users />
+          <Link to="/referral" className="my-1">
+            Реферальная программа
+          </Link>
+          <img src="../../assets/icons/chevron-down-ic.svg" />
+        </div>
+        <div className="flex justify gap-4 mb-4">
           <img src="../../assets/icons/MSB-ic.svg" />
           <p className="my-1">МСБ</p>
+          <img src="../../assets/icons/chevron-down-ic.svg" />
         </div>
         <div className="flex justify gap-4 mb-4">
           <img src="../../assets/icons/digital-id-ic.svg" />
@@ -51,9 +60,7 @@ function SideBar() {
         </div>
         <div className="flex justify gap-4 mb-4">
           <img src="../../assets/icons/chart-line-ic.svg" />
-          <Link to="/referral" className="my-1">
-            Рейтинговая модель
-          </Link>
+          <p>Рейтинговая модель</p>
           <img src="../../assets/icons/chevron-down-ic.svg" />
         </div>
         <div className="flex justify gap-4 mb-4">
@@ -63,10 +70,6 @@ function SideBar() {
         <div className="flex justify gap-4 mb-4">
           <img src="../../assets/icons/OTP-templates-ic.svg" />
           <p className="my-1">Шаблоны ОТР</p>
-        </div>
-        <div className="flex justify gap-4 mb-4">
-          <img src="../../assets/icons/ORM-ic.svg" />
-          <p className="my-1">ORM</p>
         </div>
         <div className="flex justify gap-4 mb-4 text-lg">
           <img src="../../assets/icons/ORM-ic.svg" />

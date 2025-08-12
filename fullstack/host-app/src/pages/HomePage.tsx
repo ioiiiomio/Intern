@@ -1,17 +1,14 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState, Suspense } from "react"
-import SideBar from "../components/SideBar"
-import TablePage from "./TablePage"
-import ReferalPage from "./ReferalPage"
-import { Routes, Route } from "react-router-dom"
-
+import React, { useEffect, useState, Suspense } from "react";
+import SideBar from "../components/SideBar";
+import TablePage from "./TablePage";
+import ReferalPage from "./ReferalPage";
+import { Routes, Route } from "react-router-dom";
 
 function HomePage() {
-
   return (
-    
-    <div className="w-screen h-screen overflow-hidden no-scrollbar bg-background_prime p-4 grid grid-cols-[300px_1fr_120px] gap-3">
+    <div className="w-screen h-screen overflow-hidden no-scrollbar bg-background_prime p-4 grid grid-cols-[320px_1fr_120px] gap-3">
       {/* Sidebar */}
       <div>
         <SideBar />
@@ -23,7 +20,10 @@ function HomePage() {
           <Routes>
             <Route path="/referral" element={<ReferalPage />} />
             <Route path="/game" element={<TablePage />} />
-            <Route path="/" element={<div>Welcome! Select a page from the sidebar.</div>} />
+            <Route
+              path="/"
+              element={<div>Welcome! Select a page from the sidebar.</div>}
+            />
           </Routes>
         </Suspense>
       </div>
@@ -31,7 +31,7 @@ function HomePage() {
       {/* Right Padding Box */}
       <div className="bg-background_prime" />
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

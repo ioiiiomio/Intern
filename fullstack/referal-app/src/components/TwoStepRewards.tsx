@@ -1,11 +1,14 @@
 import React from "react";
 import TwoStepRewardItems from "./TwoStepRewardsItems";
-import { AlertDialogProvider } from "./providers/alert-dialog-provider";
+import { doubleRewards } from "../data/twoStepRewards";
+import Rewards from "./Rewards";
 
 function TwoStepRewards() {
   return (
     <div className="w-full">
-      <TwoStepRewardItems />
+      {doubleRewards.map((reward) => (
+        <TwoStepRewardItems key={reward.requestID} reward={reward} />
+      ))}
     </div>
   );
 }
