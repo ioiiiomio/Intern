@@ -18,7 +18,9 @@ const badgeVariants = cva(
         paid: "bg-bank_green text-white",
         checked: "bg-blue_accent text-white",
         waiting: "bg-border_color text-text-color",
+        on_wait: "bg-white text-bank_orange border-bank_orange",
         declined: "",
+
         // upd declined later, ask alisher
       },
     },
