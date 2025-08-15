@@ -62,7 +62,9 @@ function HomePage() {
               path="/kitty"
               element={
                 <div className="bg-white grid place-items-center h-screen border-white border-r-10">
-                  <img src="https://media.tenor.com/Nqs4I7RiuNwAAAAM/dragon-dance-memw-dragon-dance-meme.gif" />
+                  {/* <img src="https://media.tenor.com/Nqs4I7RiuNwAAAAM/dragon-dance-memw-dragon-dance-meme.gif" />
+                   */}
+                  <img src="https://c.tenor.com/_4YgA77ExHEAAAAd/rick-roll.gif" />
                 </div>
               }
             />
