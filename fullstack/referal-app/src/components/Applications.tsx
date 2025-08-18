@@ -1,10 +1,7 @@
 // Здесь про заявки: Всего, успешные, Ожидают, Вознаграждения
 
+import { FileIcon, CheckIcon, Clock2, Banknote } from "lucide-react";
 import React from "react";
-import FileIcon from "../../public/assets/icons/file-ic.svg";
-import CheckIcon from "../../public/assets/icons/check-ic.svg";
-import WaitingIcon from "../../public/assets/icons/waiting-ic.svg";
-import RewardIcon from "../../public/assets/icons/reward-ic.svg";
 
 function Applications() {
   const temporary = 12;
@@ -19,8 +16,8 @@ function Applications() {
             <p className="text-text_color_secondary">за месяц</p>
           </div>
         </div>
-        <div className="ml-3">
-          <FileIcon />
+        <div className="ml-3 p-13">
+          <FileIcon className="w-9 h-9 text-bank_yellow" />
         </div>
       </div>
 
@@ -33,8 +30,8 @@ function Applications() {
             <p className="text-text_color_secondary">конверсия</p>
           </div>
         </div>
-        <div className="ml-3">
-          <CheckIcon />
+        <div className="ml-3 p-13">
+          <CheckIcon className="w-9 h-9 text-blue_accent" />
         </div>
       </div>
 
@@ -47,8 +44,8 @@ function Applications() {
             <p className="text-text_color_secondary">от общего</p>
           </div>
         </div>
-        <div className="ml-3">
-          <WaitingIcon />
+        <div className="ml-3 p-13">
+          <Clock2 className="w-9 h-9 text-bank_orange" />
         </div>
       </div>
 
@@ -61,8 +58,8 @@ function Applications() {
             <p className="text-text_color_secondary">в этом месяце</p>
           </div>
         </div>
-        <div className="ml-3">
-          <RewardIcon />
+        <div className="ml-3 p-13">
+          <Banknote className="w-9 h-9 text-bank_green" />
         </div>
       </div>
     </div>

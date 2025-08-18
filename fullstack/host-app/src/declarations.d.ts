@@ -3,5 +3,6 @@
 //   export default TableHeader;
 // }
 
-declare module "gamificationApp/TablePage"
-declare module "referalApp/ReferalPage"
+declare module "gamificationApp/TablePage";
+declare module "referalApp/ReferalPage";
+declare module "referalApp/Pages";

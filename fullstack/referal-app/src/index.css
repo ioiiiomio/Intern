@@ -47,6 +47,7 @@
   --bank_green: #4ca436;
   --bank_green_light: #ebfce7;
   --bank_orange: #ea9632;
+  --bank_yellow: #ffc72c;
   --bank_red: #cd3737;
   --border_color: #e2e2e2;
   --blue_accent: #0077c8;
@@ -60,6 +61,7 @@ body.barbie-theme {
   --text_color_secondary: #d56ea3;
   --blue_accent: #e0218a;
   --bank_green: #a8006a;
+  --bank_yellow: #a8006a;
 }
 
 /* Optional: full screen canvas for confetti */

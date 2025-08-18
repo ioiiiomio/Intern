@@ -13,6 +13,7 @@ module.exports = {
         text_color: "var(--text_color)",
         text_color_secondary: "var(--text_color_secondary)",
         blue_accent: "var(--blue_accent)",
+        bank_yellow: "var(--bank_yellow)",
       },
     },
   },

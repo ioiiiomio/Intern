@@ -1,23 +1,22 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const { ModuleFederationPlugin } = require('webpack').container;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const { ModuleFederationPlugin } = require("webpack").container;
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-
 module.exports = {
-  entry: './src/index.tsx',
-  mode: 'development',
-  
+  entry: "./src/index.tsx",
+  mode: "development",
+
   output: {
-      path: path.resolve(__dirname, 'build'),
-      publicPath: 'http://localhost:3002/',
-    },
-  resolve: {
-      alias: { "@": path.resolve(__dirname, "./src") },
-      extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
-      plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
+    path: path.resolve(__dirname, "build"),
+    publicPath: "http://localhost:3002/",
   },
-  
+  resolve: {
+    alias: { "@": path.resolve(__dirname, "./src") },
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
+  },
+
   devServer: {
     headers: { "Access-Control-Allow-Origin": "*" },
     port: 3002,
@@ -25,7 +24,6 @@ module.exports = {
     watchFiles: [path.resolve(__dirname, "src")],
     static: { directory: path.resolve(__dirname, "public") },
   },
-
 
   module: {
     rules: [
@@ -47,36 +45,36 @@ module.exports = {
       {
         test: /\.svg$/,
         issuer: /\.[jt]sx?$/,
-        use: ['@svgr/webpack'],
-      }
-
+        use: ["@svgr/webpack"],
+      },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'referalApp',
-      filename: 'remoteEntry.js',
+      name: "referalApp",
+      filename: "remoteEntry.js",
       exposes: {
-        './ReferalPage': './src/pages/ReferalPage.tsx',
+        "./ReferalPage": "./src/pages/ReferalPage.tsx",
+        "./Pages": "./src/pages/Pages.tsx",
       },
       shared: {
         react: {
           singleton: true,
-          requiredVersion: '^19.1.0',
-          eager: true, 
+          requiredVersion: "^19.1.0",
+          eager: true,
         },
-        'react-dom': {
+        "react-dom": {
           singleton: true,
-          requiredVersion: '^19.1.0',
-          eager: true, 
+          requiredVersion: "^19.1.0",
+          eager: true,
         },
         "@radix-ui/react-slot": { singleton: true },
         "class-variance-authority": { singleton: true },
         "tailwind-variants": { singleton: true },
-      }
+      },
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: "./src/index.html",
     }),
   ],
 };
