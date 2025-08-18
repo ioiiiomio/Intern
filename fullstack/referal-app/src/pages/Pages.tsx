@@ -6,6 +6,7 @@ import "tailwindcss/tailwind.css";
 import Applications from "@/components/Applications";
 import Rewards from "@/components/Rewards";
 import LastApplications from "@/components/LastApplications";
+import Clients from "@/components/Clients";
 
 export function ApplicationPage() {
   return (
@@ -19,7 +20,7 @@ export function ApplicationPage() {
 export function ClientsPage() {
   return (
     <div className="bg-white border border-r-4">
-      <p>Страница клиентов</p>
+      <Clients />
     </div>
   );
 }

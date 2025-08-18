@@ -118,7 +118,7 @@ function SideBar() {
             </div>
             <div className="flex gap-4 mb-2 text-m font-medium">
               <Link
-                to="/kitty"
+                to="/referral/rewards"
                 className="flex items-center gap-4 hover:text-blue-500 focus:text-blue_accent"
               >
                 <Banknote className="w-7.5 h-7.5" />

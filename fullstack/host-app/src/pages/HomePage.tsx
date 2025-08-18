@@ -5,7 +5,7 @@ import SideBar from "../components/SideBar";
 import TablePage from "./TablePage";
 import ReferalPage from "./ReferalPage";
 import { Routes, Route } from "react-router-dom";
-import ApplicationsPage from "./Pages";
+import { ClientsPage, RewardsPage, ApplicationPage } from "./Pages";
 
 function HomePage() {
   return (
@@ -23,8 +23,10 @@ function HomePage() {
             <Route path="/game" element={<TablePage />} />
             <Route
               path="/referral/applications"
-              element={<ApplicationsPage />}
+              element={<ApplicationPage />}
             />
+            <Route path="/referral/clients" element={<ClientsPage />} />
+            <Route path="/referral/rewards" element={<RewardsPage />} />
             <Route
               path="/"
               element={
