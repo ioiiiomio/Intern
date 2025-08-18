@@ -9,7 +9,7 @@ import ApplicationsPage from "./Pages";
 
 function HomePage() {
   return (
-    <div className="w-screen h-screen overflow-hidden no-scrollbar bg-background_prime p-4 grid grid-cols-[320px_1fr_120px] gap-4">
+    <div className="w-screen h-screen overflow-hidden no-scrollbar bg-background_prime grid grid-cols-[320px_1fr_120px] gap-4">
       {/* Sidebar */}
       <div>
         <SideBar />

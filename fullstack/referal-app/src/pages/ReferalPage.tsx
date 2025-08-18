@@ -17,7 +17,7 @@ function ReferalPage() {
       {/* Разрешаю вызывать Алерты в любой части приложения */}
       <div className="flex flex-col space-y-4 no-scrollbar overflow-y-scroll text-text_color">
         {/* Page Title */}
-        <h1 className="text-2xl font-semibold">Реферальная программа</h1>
+        <h1 className="my-4 text-2xl font-semibold">Реферальная программа</h1>
 
         {/* Applications Section */}
         <div className="bg-background_secondary p-4 border border-border_color rounded-2xl">

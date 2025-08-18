@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { columns } from "./ui/tables/last-applications-table/columns";
 import { DataTable } from "./ui/tables/last-applications-table/data-table";
 
-function LastApplications() {
+function Clients() {
   const [data, setData] = useState<LastApplicationsData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -17,13 +17,12 @@ function LastApplications() {
   }, []);
 
   return (
-    <div className="w-full bg-white">
-      <div className="mb-4 flex gap-4"></div>
+    <div className="w-full">
       <div>
         <DataTable columns={columns} data={data} />
       </div>
     </div>
   );
 }
-
-export default LastApplications;
+// Потом обновить
+export default Clients;

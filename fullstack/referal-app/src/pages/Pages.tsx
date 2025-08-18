@@ -1,12 +1,17 @@
 "use client";
+
 import React from "react";
+import "tailwindcss/tailwind.css";
+
 import Applications from "@/components/Applications";
 import Rewards from "@/components/Rewards";
+import LastApplications from "@/components/LastApplications";
 
 export function ApplicationPage() {
   return (
-    <div className="bg-white border border-r-4">
-      <Applications />
+    <div className="">
+      <h1 className="text-2xl font-semibold my-7">Заявки</h1>
+      <LastApplications />
     </div>
   );
 }
