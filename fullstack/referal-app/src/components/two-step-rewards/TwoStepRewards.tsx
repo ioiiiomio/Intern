@@ -1,7 +1,7 @@
 import React from "react";
 import TwoStepRewardItems from "./TwoStepRewardsItems";
-import { doubleRewards } from "../data/twoStepRewards";
-import Rewards from "./Rewards";
+import { doubleRewards } from "../../data/twoStepRewards";
+import Rewards from "../rewards-components/Rewards";
 
 function TwoStepRewards() {
   return (

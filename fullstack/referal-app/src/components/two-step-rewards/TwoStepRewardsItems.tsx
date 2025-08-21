@@ -1,9 +1,9 @@
 import React from "react";
-import { Progress } from "./ui/progress";
+import { Progress } from "../ui/progress";
 import { CircleCheckBig, SquarePen, Trash2 } from "lucide-react";
-import { Badge } from "./ui/badge";
-import { useAlertDialog } from "./providers/alert-dialog-provider";
-import type { DoubleReward, Stage } from "../data/twoStepRewards";
+import { Badge } from "../ui/badge";
+import { useAlertDialog } from "../providers/alert-dialog-provider";
+import type { DoubleReward, Stage } from "../../data/twoStepRewards";
 
 interface TwoStepRewardItemsProps {
   reward: DoubleReward;

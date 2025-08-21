@@ -51,12 +51,14 @@
   --bank_red: #cd3737;
   --border_color: #e2e2e2;
   --blue_accent: #0077c8;
+  --muted_foreground: #b8bbbf;
 }
 
 /* Barbie theme variable overrides */
 body.barbie-theme {
   --background_prime: #fff0f6;
   --background_secondary: #ffe6f0;
+  --muted_foreground: #d56ea3;
   --text_color: #a8006a;
   --text_color_secondary: #d56ea3;
   --blue_accent: #e0218a;

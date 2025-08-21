@@ -4,10 +4,10 @@ import React from "react";
 import "tailwindcss/tailwind.css";
 
 import QuickActions from "../components/QuickActions";
-import Applications from "../components/Applications";
+import Applications from "../components/application-components/Applications";
 import LastApplications from "../components/LastApplications";
-import Rewards from "../components/Rewards";
-import TwoStepRewards from "../components/TwoStepRewards";
+import Rewards from "../components/rewards-components/Rewards";
+import TwoStepRewards from "../components/two-step-rewards/TwoStepRewards";
 import SalaryProjects from "../components/SalaryProjects";
 import { AlertDialogProvider } from "@/components/providers/alert-dialog-provider";
 

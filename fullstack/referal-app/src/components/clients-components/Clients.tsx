@@ -1,7 +1,7 @@
 import { getClientsData, ClientsData } from "@/data/clientsData";
 import React, { useEffect, useState } from "react";
-import { columns } from "./ui/tables/clients-table/columns";
-import { DataTable } from "./ui/tables/clients-table/data-table";
+import { columns } from "../ui/tables/clients-table/columns";
+import { DataTable } from "../ui/tables/clients-table/data-table";
 
 function Clients() {
   const [data, setData] = useState<ClientsData[]>([]);
