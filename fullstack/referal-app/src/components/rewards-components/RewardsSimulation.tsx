@@ -6,7 +6,9 @@ function RewardsSimulation() {
   return (
     <div className="bg-white rounded-xl w-[1384px] mb-4 p-6">
       <div className="mb-6">
-        <p className="mb-4 text-xl font-semibold">Симуляция Вознаграждения</p>
+        <p className="mb-4 text-xl font-semibold text-text_color">
+          Симуляция Вознаграждения
+        </p>
         <p className="text-text_color_secondary">
           Рассчитайте размер Вознаграждения для различных продуктов и сумм
         </p>

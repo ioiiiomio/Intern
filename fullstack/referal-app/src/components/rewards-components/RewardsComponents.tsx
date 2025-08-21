@@ -39,15 +39,15 @@ function RewardPerformance() {
   return (
     <div>
       {/* Tabs / Categories */}
-      <div className="flex gap-8 mb-4">
+      <div className="flex gap-8 mb-4 ">
         {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setSelectedCategory(cat.id)}
             className={`cursor-pointer pb-1 ${
               selectedCategory === cat.id
-                ? "border-b-2 border-bank_orange font-semibold"
-                : "text-gray-500"
+                ? "border-b-2 border-bank_orange font-semibold text-text_color"
+                : "text-text_color_secondary"
             }`}
           >
             {cat.label}
