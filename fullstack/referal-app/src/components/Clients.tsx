@@ -1,16 +1,13 @@
-import {
-  getLastApplicationsData,
-  LastApplicationsData,
-} from "@/data/lastApplicationsData";
+import { getClientsData, ClientsData } from "@/data/clientsData";
 import React, { useEffect, useState } from "react";
-import { columns } from "./ui/tables/last-applications-table/columns";
-import { DataTable } from "./ui/tables/last-applications-table/data-table";
+import { columns } from "./ui/tables/clients-table/columns";
+import { DataTable } from "./ui/tables/clients-table/data-table";
 
 function Clients() {
-  const [data, setData] = useState<LastApplicationsData[]>([]);
+  const [data, setData] = useState<ClientsData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = getLastApplicationsData();
+      const result = getClientsData();
       setData(await result);
     };
     fetchData();

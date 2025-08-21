@@ -7,7 +7,7 @@ import ExportIcon from "../../public/assets/icons/export-ic.svg";
 
 function QuickActions() {
   return (
-    <div className="w-full p-6">
+    <div className="max-w-346 p-6 bg-white rounded-xl">
       <div className="mb-4">
         <h1 className="font-semibold text-xl">Быстрые действия</h1>
       </div>

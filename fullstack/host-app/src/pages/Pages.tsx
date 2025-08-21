@@ -16,7 +16,7 @@ export const ApplicationPage = React.lazy(() =>
 
 // Lazy load Clients
 export const ClientsPage = React.lazy(() =>
-  import("referalApp/Pages").then((module) => ({ default: module.Clients }))
+  import("referalApp/Pages").then((module) => ({ default: module.ClientsPage }))
 );
 
 // Lazy load RewardsPage

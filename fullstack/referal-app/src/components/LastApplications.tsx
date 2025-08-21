@@ -17,8 +17,7 @@ function LastApplications() {
   }, []);
 
   return (
-    <div className="w-full bg-white">
-      <div className="mb-4 flex gap-4"></div>
+    <div className="">
       <div>
         <DataTable columns={columns} data={data} />
       </div>

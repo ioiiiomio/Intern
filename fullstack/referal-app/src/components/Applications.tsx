@@ -6,8 +6,8 @@ import React from "react";
 function Applications() {
   const temporary = 12;
   return (
-    <div className="w-full flex gap-3 justify-between items-center">
-      <div className="w-[337px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
+    <div className="max-w-346 flex gap-3 justify-between items-center">
+      <div className="w-[340px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
         <div>
           <p className="text-lg mb-2">Всего заявок</p>
           <h1 className="text-3xl font-semibold mb-4">0</h1>
@@ -21,7 +21,7 @@ function Applications() {
         </div>
       </div>
 
-      <div className="w-[337px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
+      <div className="w-[340px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
         <div>
           <p className="text-lg mb-2">Успешные</p>
           <h1 className="text-3xl font-semibold mb-4">0</h1>
@@ -35,7 +35,7 @@ function Applications() {
         </div>
       </div>
 
-      <div className="w-[337px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
+      <div className="w-[340px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
         <div>
           <p className="text-lg mb-2">Ожидают</p>
           <h1 className="text-3xl font-semibold mb-4">0</h1>
@@ -49,7 +49,7 @@ function Applications() {
         </div>
       </div>
 
-      <div className="w-[337px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
+      <div className="w-[340px] h-[149px] p-6  bg-white border rounded-2xl flex justify-between">
         <div>
           <p className="text-lg mb-2">Вознаграждения</p>
           <h1 className="text-3xl font-semibold mb-4">0₸</h1>

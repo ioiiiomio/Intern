@@ -34,7 +34,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="overflow-hidden justify-center">
+    <div className="overflow-hidden justify-center p-6 rounded-xl bg-white max-w-346">
       <div className="justify-between grid grid-cols-2 grid-rows-1">
         <h1 className="font-semibold text-xl mb-4">Вознаграждения</h1>
         {/* Filter thingy -> change to shadcn ltr */}

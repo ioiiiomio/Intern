@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <div className="w-screen h-screen overflow-hidden no-scrollbar bg-background_prime grid grid-cols-[320px_1fr_120px] gap-4">
       {/* Sidebar */}
-      <div>
+      <div className="ml-4 mt-4">
         <SideBar />
       </div>
 
@@ -27,6 +27,7 @@ function HomePage() {
             />
             <Route path="/referral/clients" element={<ClientsPage />} />
             <Route path="/referral/rewards" element={<RewardsPage />} />
+            <Route path="/referral/clients" element={<ClientsPage />} />
             <Route
               path="/"
               element={

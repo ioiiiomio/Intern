@@ -11,7 +11,7 @@ import Clients from "@/components/Clients";
 export function ApplicationPage() {
   return (
     <div className="">
-      <h1 className="text-2xl font-semibold my-7">Заявки</h1>
+      <h1 className="text-2xl font-semibold my-4">Заявки</h1>
       <LastApplications />
     </div>
   );

@@ -20,27 +20,27 @@ function ReferalPage() {
         <h1 className="my-4 text-2xl font-semibold">Реферальная программа</h1>
 
         {/* Applications Section */}
-        <div className="bg-background_secondary p-4 border border-border_color rounded-2xl">
-          <Applications />
-        </div>
+        {/* <div className="bg-background_secondary p-4 border border-border_color rounded-2xl"> */}
+        <Applications />
+        {/* </div> */}
 
         {/* Quick Actions */}
-        <div className="bg-background_secondary p-4 border border-border_color rounded-2xl">
-          <QuickActions />
-        </div>
+        {/* <div className="bg-background_secondary p-4 border border-border_color rounded-2xl"> */}
+        <QuickActions />
+        {/* </div> */}
 
         {/* Last Applications */}
-        <div className="bg-white rounded-xl border p-[32px]">
-          <LastApplications />
-        </div>
+        {/* <div className="bg-bank_secondary rounded-xl border max-w-346"> */}
+        <LastApplications />
+        {/* </div> */}
 
         {/* Rewards */}
-        <div className="bg-white rounded-xl border p-[32px]">
-          <Rewards />
-        </div>
+        {/* <div className="bg-white rounded-xl border p-[32px]"> */}
+        <Rewards />
+        {/* </div> */}
 
         {/* Two Step Rewards */}
-        <div className="bg-white rounded-xl border p-6">
+        <div className="bg-white rounded-xl border p-6 max-w-346">
           <p className="mb-4 text-xl font-semibold">
             Двухэтапные вознаграждения
           </p>
@@ -48,9 +48,9 @@ function ReferalPage() {
         </div>
 
         {/* Salary Projects */}
-        <div className="bg-white rounded-xl border p-[32px]">
-          <SalaryProjects />
-        </div>
+        {/* <div className="bg-white rounded-xl border p-[32px] mb-4"> */}
+        <SalaryProjects />
+        {/* </div> */}
       </div>
     </AlertDialogProvider>
   );
