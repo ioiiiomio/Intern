@@ -20,6 +20,8 @@ import {
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  // addMutation MUTATION
+  // QUERY QUERY
 }
 
 export function DataTable<TData, TValue>({

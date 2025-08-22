@@ -10,27 +10,21 @@ const categories = [
 ];
 
 // Example dataset
-const rewardsByCategory: Record<string, { title: string; data: any[] }> = {
-  individuals: {
-    title: "Кредиты физлиц",
-    data: [1, 2], // just placeholders for cards
-  },
+const rewardsByCategory: Record<string, { title: any[]; data: any[] }> = {
+  individuals: { title: ["Кредиты физлиц", "Другие продукты"], data: [1, 2] },
   msb: {
-    title: "МСБ кредиты",
+    title: ["МСБ кредитование", "МСБ Гарантии", "Другие продукты МСБ"],
     data: [1, 2, 3],
   },
   kb: {
-    title: "КБ кредиты",
+    title: ["КБ Кредитование", "КБ Гарантии и линии", "Другие продукты КБ"],
     data: [1],
   },
   cards: {
-    title: "Карты",
+    title: ["Зарплатные проекты", "Выпуск карт"],
     data: [1, 2, 3, 4],
   },
-  transactions: {
-    title: "Транзакции",
-    data: [1, 2],
-  },
+  transactions: { title: ["Платежные системы", "v"], data: [1, 2] },
 };
 
 function RewardPerformance() {
@@ -39,7 +33,7 @@ function RewardPerformance() {
   return (
     <div>
       {/* Tabs / Categories */}
-      <div className="flex gap-8 mb-4 ">
+      <div className="flex gap-8 mb-4">
         {categories.map((cat) => (
           <button
             key={cat.id}

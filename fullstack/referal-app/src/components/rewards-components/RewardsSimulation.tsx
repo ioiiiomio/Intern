@@ -1,6 +1,7 @@
-import { SelectTrigger, SelectValue } from "@radix-ui/react-select";
+import { SelectTrigger, SelectValue } from "../ui/select";
 import React from "react";
 import { Select, SelectContent, SelectItem } from "../ui/select";
+import { Button } from "../ui/button";
 
 function RewardsSimulation() {
   return (
@@ -16,9 +17,12 @@ function RewardsSimulation() {
 
       <div className="flex gap-4">
         <div>
-          <p className="text-xs text-text_color_secondary">Тип клиента</p>
+          <p className="text-xs text-text_color_secondary mb-2">Тип клиента</p>
           <Select>
-            <SelectTrigger className="w-[342.6666564941406px]">
+            <SelectTrigger
+              className="
+            "
+            >
               <SelectValue placeholder="Выберите категорию" />
             </SelectTrigger>
             <SelectContent>
@@ -28,9 +32,9 @@ function RewardsSimulation() {
           </Select>
         </div>
         <div>
-          <p className="text-xs text-text_color_secondary">Продукт</p>
+          <p className="text-xs text-text_color_secondary mb-2">Продукт</p>
           <Select>
-            <SelectTrigger className="w-[342.6666564941406px]">
+            <SelectTrigger className="">
               <SelectValue placeholder="Выберите категорию" />
             </SelectTrigger>
             <SelectContent>
@@ -40,9 +44,9 @@ function RewardsSimulation() {
           </Select>
         </div>
         <div>
-          <p className="text-xs text-text_color_secondary">Сумма</p>
+          <p className="text-xs text-text_color_secondary mb-2">Сумма</p>
           <Select>
-            <SelectTrigger className="w-[342.6666564941406px]">
+            <SelectTrigger className="">
               <SelectValue placeholder="Выберите категорию" />
             </SelectTrigger>
             <SelectContent>
@@ -51,8 +55,10 @@ function RewardsSimulation() {
             </SelectContent>
           </Select>
         </div>
-        <div>
-          <p>Рассчитать Вознаграждения</p>
+        <div className="mt-6">
+          <Button className="bg-blue_accent rounded-xl text-white font-medium text-base w-[260px] h-[51px]">
+            Рассчитать вознаграждение
+          </Button>
         </div>
       </div>
     </div>

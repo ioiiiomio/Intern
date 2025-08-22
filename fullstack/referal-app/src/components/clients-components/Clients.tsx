@@ -13,6 +13,8 @@ function Clients() {
     fetchData();
   }, []);
 
+  // const addmutation = useMutation(....) tanstack query - mutation
+
   return (
     <div className="w-full">
       <div>
